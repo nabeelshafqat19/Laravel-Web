@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,7 +19,7 @@ class Product extends Model
         'brand',
         'small_description',
         'description',
-        'orignal_price',
+        'original_price',
         'selling_price',
         'quantity',
         'trending',
@@ -27,5 +28,15 @@ class Product extends Model
         'meta_keyword',
         'meta_description',
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'category_id','id');
+    }
+
+    public function productImages()
+    {
+       return $this->hasMany(ProductImage::class, 'product_id','id');
+    }
 }
 ?>

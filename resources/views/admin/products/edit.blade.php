@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h3>Add Product
+                <h3>Edit Product
                       <a href="{{ url('admin/products') }}" class="btn btn-danger btn-sm text-white float-end">
                          BACK
                      </a>
@@ -22,8 +22,9 @@
                </div>
                 @endif
                 
-              <form action="{{ url('admin/products') }}" method="POST" enctype="multipart/form-data">
+              <form action="{{ url('admin/products/'.$product->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
 
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                <li class="nav-item" role="presentation">
@@ -50,26 +51,31 @@
                <div class="tab-content" id="myTabContent">
                  <div class="tab-pane fade border p-3 show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
                     <div class="mb-3">
-                      <label>Category</label>
+                      <label>Select Category</label>
                       <select name="category_id" class="form-control">
+                        <option value="">Select Category</option>
                         @foreach ($categories as $category)
-                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected':'' }} >
+                            {{ $category->name }}
+                        </option>
                         @endforeach
                      </select>
                    </div>
                    <div class="mb-3">
                      <label>Product Name</label>
-                     <input type="text" name="name" class="form-control" />
+                     <input type="text" name="name" value="{{ $product->name }}" class="form-control" />
                    </div>
                    <div class="mb-3">
                      <label>Product Slug</label>
-                     <input type="text" name="slug" class="form-control" />
+                     <input type="text" name="slug" value="{{ $product->slug }}" class="form-control" />
                     </div>
                    <div class="mb-3">
                      <label>Select Brand</label>
                      <select name="brand" class="form-control">
                        @foreach ($brands as $brand)
-                       <option value="{{ $brand->name }}">{{ $brand->name }}</option>
+                       <option value="{{ $brand->name }}" {{ $brand->name == $product->brand ? 'selected':'' }}>
+                         {{ $brand->name }}
+                       </option>
                        @endforeach
                      </select>
                     </div>
