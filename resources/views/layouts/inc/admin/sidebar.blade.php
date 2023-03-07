@@ -39,9 +39,15 @@
             </div>
             </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
+            <a class="nav-link" href="{{ url('admin/brands') }}">
               <i class="mdi mdi-view-headline menu-icon"></i>
               <span class="menu-title">Brands</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/colors') }}">
+              <i class="mdi mdi-view-headline menu-icon"></i>
+              <span class="menu-title">Colors</span>
             </a>
           </li>
           <li class="nav-item">

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->mediumText('small_description')->nullable();
             $table->longText('description')->nullable();
 
-            $table->integer('orignal_price');
+            $table->integer('original_price');
             $table->integer('selling_price');
             $table->integer('quantity');
             $table->tinyInteger('trending')->default('0')->comment('1=trending,0=not-trending');
