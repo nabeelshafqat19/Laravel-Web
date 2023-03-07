@@ -4,6 +4,9 @@
 
 <div class="row">
     <div class="col-md-12">
+                @if (session('message'))
+                 <h5 class="alert alert-success mb-2">{{ session('message') }}</h5>
+                @endif
         <div class="card">
             <div class="card-header">
                 <h3>Edit Product
@@ -143,9 +146,14 @@
                     </div>
                     <div>
                         @if($product->productImages)
-                        @foreach ($product->productImages as $image)
-                         <img src="{{ asset($image->image) }}" style="width: 80px; height:80px;" class="me-4 border" alt="Img" />
-                        @endforeach
+                        <div class="row">
+                           @foreach ($product->productImages as $image)
+                           <div class="col-md-2">
+                             <img src="{{ asset($image->image) }}" style="width: 80px; height:80px;" class="me-4 border" alt="Img" />
+                             <a href="{{ url('admin/product-image/'.$image->id.'/delete') }}" class="d-block">Remove</a>
+                           </div>
+                           @endforeach
+                        </div>
                         @else
                         <h5>No Image Added</h5>
                         @endif
@@ -153,7 +161,7 @@
                  </div>
                </div>
               <div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </div>
               </form>
             </div>
