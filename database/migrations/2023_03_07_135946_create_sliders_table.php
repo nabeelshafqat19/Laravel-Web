@@ -9,9 +9,9 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up()
+    public function up(): void
     {
-        Schema::create('slider', function (Blueprint $table) {
+        Schema::create('sliders', function (Blueprint $table) {
             $table->id();
             $table->string('title');
             $table->mediumText('description')->nullable();
@@ -26,7 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('slider');
+        Schema::dropIfExists('sliders');
     }
 };
-?>
