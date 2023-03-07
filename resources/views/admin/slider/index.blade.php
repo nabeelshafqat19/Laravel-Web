@@ -12,7 +12,7 @@
         <div class="card">
             <div class="card-header">
                 <h3>Slider List
-                    <a href="{{url('admin/sliders/create')}}" class="btn btn-primary btn-sm text-white float-end">
+                    <a href="{{url('admin/slider/create')}}" class="btn btn-primary btn-sm text-white float-end">
                         Add Slider
                     </a>
                 </h3>

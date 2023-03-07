@@ -1,4 +1,4 @@
-h@extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -37,7 +37,7 @@ h@extends('layouts.admin')
                     <div class="mb-3">
                         <label>Status</label> <br/>
                         <input type="checkbox" name="status" style="width:30;height:30px"/>
-                         Checked=Hidden,UnChecked=Visible
+                         
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Save</button>

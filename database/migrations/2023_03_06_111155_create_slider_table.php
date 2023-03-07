@@ -9,12 +9,12 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
-        Schema::create('sliders', function (Blueprint $table) {
+        Schema::create('slider', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->mediumText('description')->nullable;
+            $table->mediumText('description')->nullable();
             $table->string('image');
             $table->tinyInteger('status')->default('0')->comment('1=hidden,0=visible');
             $table->timestamps();
@@ -26,6 +26,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sliders');
+        Schema::dropIfExists('slider');
     }
 };
+?>

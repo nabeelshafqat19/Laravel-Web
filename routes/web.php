@@ -29,7 +29,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
     Route::controller(App\Http\Controllers\Admin\SliderController::class)->group(function () {
         Route::get('slider', 'index');
         Route::get('slider/create', 'create');
-        Route::psot('slider/create', 'store');
+        Route::post('slider/create', 'store');
         });
 
 
