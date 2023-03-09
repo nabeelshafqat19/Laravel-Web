@@ -7,6 +7,7 @@ use App\Models\Color;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use App\Models\ProductColor;
 use App\Models\ProductImage;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -135,6 +136,16 @@ class ProductController extends Controller
                     ]);
                 }
              }
+
+             if($request->colors){
+                foreach($request->colors as $key => $color){
+                     $product->productColors()->create([
+                        'product_id' => $product->id,
+                        'color_id' => $color,
+                        'quantity' => $request->colorquantity[$key] ?? 0
+                     ]);
+                }
+             }
     
              return redirect('/admin/products')->with('message','Product Updated Successfully');
         }
@@ -170,12 +181,19 @@ class ProductController extends Controller
 
     public function updateProdColorQty(Request $request, $prod_color_id)
     {
-        $productColordata = product::findOrFail($request->product_id)
+        $productColorData = product::findOrFail($request->product_id)
                                 ->productColors()->where('id',$prod_color_id)->first();
         $productColorData->update([
                 'quantity' => $request->qty
         ]);
         return response()->json(['message'=>'Product Color Qty updated']);
+    }
+
+    public function deleteProdColor($prod_color_id)
+    {
+        $prodColor = ProductColor::findOrFail($prod_color_id);
+        $prodColor->delete();
+        return response()->json(['message'=>'Product Color Qty Deleted']);
     }
 }
 
