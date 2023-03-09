@@ -277,8 +277,8 @@
           var prod_color_id = $(this).val();
           var this = $(this);
 
-          
 
+          
           $.ajax({
               type: "GET",
               url: "/admin/product-color/"+prod_color_id+"/delete",
