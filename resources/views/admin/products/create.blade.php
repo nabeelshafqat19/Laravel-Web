@@ -148,19 +148,17 @@
                       <label>Select Color</label>
                       <hr/>
                         <div class="row">
-                          @forelse ($color as $coloritem)
+                          @forelse ($colors as $coloritem)
                           <div class="col-md-3">
                             <div class="p-2 border mb-3">
-
-                            
-                          Color: <input type="checkbox" name="colors[{{ $coloritem->id }}]" value="{{ $coloritem->id }}"/> 
-                          {{ $coloritem->name }}
-                          <br/>
-                          Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border: 1px solid"/>
-                          </div>
+                              Color: <input type="checkbox" name="colors[{{ $coloritem->id }}]" value="{{ $coloritem->id }}"/> 
+                              {{ $coloritem->name }}
+                              <br/>
+                              Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border: 1px solid" />
+                            </div>
                           </div>
                           @empty
-                          <div class="col-md-3">
+                          <div class="col-md-12">
                             <h1>No colors found</h1>
                             </div>
                           @endforelse

@@ -26,8 +26,8 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        $color = Color::where('status','0')->get();
-        return view('admin.products.create', compact('categories', 'brands','color'));
+        $colors = Color::where('status','0')->get();
+        return view('admin.products.create', compact('categories', 'brands','colors'));
     }
 
     public function store(ProductFormRequest $request)
@@ -83,6 +83,7 @@ class ProductController extends Controller
          }
          return redirect('/admin/products')->with('message','Product Added Successfully');
     }
+
     public function edit(int $product_id)
     {
         $categories = Category::all();
@@ -181,10 +182,10 @@ class ProductController extends Controller
 
     public function updateProdColorQty(Request $request, $prod_color_id)
     {
-        $productColorData = product::findOrFail($request->product_id)
+        $productColorData = Product::findOrFail($request->product_id)
                                 ->productColors()->where('id',$prod_color_id)->first();
         $productColorData->update([
-                'quantity' => $request->qty
+            'quantity' => $request->qty
         ]);
         return response()->json(['message'=>'Product Color Qty updated']);
     }
@@ -193,7 +194,7 @@ class ProductController extends Controller
     {
         $prodColor = ProductColor::findOrFail($prod_color_id);
         $prodColor->delete();
-        return response()->json(['message'=>'Product Color Qty Deleted']);
+        return response()->json(['message'=>'Product Color Deleted']);
     }
 }
 
