@@ -198,16 +198,14 @@
                        <tbody>
                             @foreach ($product->productColors as $prodColor)
                             <tr class="prod-color-tr">
-                      
-                         <tr>
-                           <td>
-                            @if($prodColor->color)
-                            {{ $prodColor->color->name}}
-                            @else
-                            No color Found
-                            @endif
-                           </td>
-                           <td>
+                                <td>
+                                      @if($prodColor->color)
+                                      {{ $prodColor->color->name }}
+                                       @else
+                                      No color Found
+                                       @endif
+                                </td>
+                               <td>
                              <div class="input-group mb-3" style="width:150px">
                                 <input type="text" value="{{ $prodColor->quantity }}" class="productColorQuantity form-control form-control-sm" />
                                  <button type="button" value="{{ $prodColor->id }}" class="updateProductColorBtn btn btn-primary btn-sm text-white">Update</button>
@@ -258,6 +256,7 @@
 
         var data = {
           'product_id': product_id,
+          'product_color_id': prod_color_id,
           'qty': qty
         };
 
