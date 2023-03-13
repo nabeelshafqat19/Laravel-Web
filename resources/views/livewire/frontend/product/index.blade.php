@@ -2,6 +2,7 @@
     <div class="row">
         <div class="col-md-3">
             @if($category->brands)
+
             <div class="card">
                 <div class="card-header"><h4>Quality</h4></div>
                 <div class="card-body">
