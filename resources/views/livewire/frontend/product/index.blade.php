@@ -1,11 +1,11 @@
 <div>
     <div class="row">
         <div class="col-md-3">
-            @if(category->brands)
+            @if($category->brands)
 
             
             <div class="card">
-                <div class="card-header"><h4>Brands</h4></div>
+                <div class="card-header"><h4>Quality</h4></div>
                 <div class="card-body">
                     @foreach ($category->brands as $brandItem)
                     <label class="d-block">

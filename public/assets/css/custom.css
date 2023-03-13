@@ -130,40 +130,40 @@
     border-bottom: 1px solid #ccc;
 }
 .main-navbar .top-navbar{
-    background-color: #2874f0;
+    background-color: #ffffff;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .main-navbar .top-navbar .brand-name{
-    color: #fff;
+    color: #000000;
 }
 .main-navbar .top-navbar .nav-link{
-    color: #fff;
+    color: #000000;
     font-size: 16px;
     font-weight: 500;
 }
 .main-navbar .top-navbar .dropdown-menu{
     padding: 0px 0px;
-    border-radius: 0px;
+    border-radius: 10px;
 }
 .main-navbar .top-navbar .dropdown-menu .dropdown-item{
     padding: 8px 16px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #cac8c8;
     font-size: 14px;
 }
 .main-navbar .top-navbar .dropdown-menu .dropdown-item i{
     width: 20px;
     text-align: center;
-    color: #2874f0;
+    color: #000000;
     font-size: 14px;
 }
 .main-navbar .navbar{
     padding: 0px;
-    background-color: #ddd;
+    background-color: #000000;
 }
 .main-navbar .navbar .nav-item .nav-link{
     padding: 8px 20px;
-    color: #000;
+    color: #ffffff;
     font-size: 15px;
 }
 

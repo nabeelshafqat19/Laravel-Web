@@ -3,14 +3,14 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <h5 class="brand-name">Best Cotton</h5>
+                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin/images/Logo/logo.png" alt=" " width="120px" height="70px"/></a>
                     </div>
                     <div class="col-md-5 my-auto">
                         <form role="search">
                             <div class="input-group">
                                 <input type="search" placeholder="Search your product" class="form-control" />
-                                <button class="btn bg-white" type="submit">
-                                    <i class="fa fa-search"></i>
+                                <button class="btn bg-black" type="submit">
+                                    <i style="color: whitesmoke;" class="fa fa-search"></i>
                                 </button>
                             </div>
                         </form>
@@ -20,12 +20,12 @@
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <i class="fa fa-shopping-cart"></i> Cart (0)
+                                    <i class="fa fa-shopping-cart"></i>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <i class="fa fa-heart"></i> Wishlist (0)
+                                    <i class="fa fa-heart"></i>
                                 </a>
                             </li>
                             @guest
@@ -43,7 +43,7 @@
                          @else
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-user"></i> {{ Auth::user()->name }}
+                                    <i class="fa fa-user"></i> 
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
