@@ -14,6 +14,12 @@ class Brand extends Model
     protected $fillable = [
         'name',
         'slug',
-        'status'
+        'status',
+        'category_id'
     ];
+
+    public function category(Type $var = null)
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
+    }
 }
