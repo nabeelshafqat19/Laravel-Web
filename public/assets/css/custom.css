@@ -48,6 +48,20 @@
     text-align: center;
 }
 /* Cart or Wishlist */
+=======
+.colorSelectionLabel{
+    color: #000;
+    padding: 2px 10px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size:14px;
+    cursor: pointer;
+}
+.colorSelectionLabel:active{
+    background-color: #ffffff !important;
+    border: 2px solid #000000;
+}
+
 
 /* Product View */
 .product-view .product-name{

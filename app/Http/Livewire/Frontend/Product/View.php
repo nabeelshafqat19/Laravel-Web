@@ -8,7 +8,18 @@ use Illuminate\Support\Facades\Auth;
 
 class View extends Component
 {
-    public $category, $product;
+    public $category, $product, $prodColorSelectedQuantity;
+
+    public function colorSelected($productColorId)
+    {
+        // dd($productColorId);
+        $productColor = $this->product->productColors()->where('id',$productColorId)->first();
+        $this->prodColorSelectedQuantity = $productColor->quantity;
+
+        if($this->prodColorSelectedQuantity == 0){
+            $this->prodColorSelectedQuantity = 'outOfStock';
+        }
+    }
 
     public function addToWishList($productId)
     {
@@ -61,7 +72,7 @@ class View extends Component
     {
         return view('livewire.frontend.product.view',[
             'category' => $this->category,
-            'product' => $this->product,
+            'product' => $this->product
         ]);
     }
 }
