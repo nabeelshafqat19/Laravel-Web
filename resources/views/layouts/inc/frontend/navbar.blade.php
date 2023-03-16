@@ -3,7 +3,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                    <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin/images/Logo/logo.png" alt=" " width="120px" height="70px"/></a>
+                     <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin/images/Logo/logo.png" alt=" " width="120px" height="70px"/></a>
                     </div>
                     <div class="col-md-5 my-auto">
                         <form role="search">
@@ -24,7 +24,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link" href="{{ url('wishlist') }}">
                                     <i class="fa fa-heart"></i>
                                 </a>
                             </li>
