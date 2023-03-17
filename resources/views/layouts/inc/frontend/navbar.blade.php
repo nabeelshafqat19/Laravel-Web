@@ -3,7 +3,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
-                     <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin/images/Logo/logo.png" alt=" " width="120px" height="70px"/></a>
+                     <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="Profile Pic" width="120px" height="70px"/></a>
                     </div>
                     <div class="col-md-5 my-auto">
                         <form role="search">
@@ -20,7 +20,7 @@
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <i class="fa fa-shopping-cart"></i> Cart (0)
+                                    <i class="fa fa-shopping-cart"></i> Cart (<livewire:frontend.cart.cart-count />)
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -48,7 +48,7 @@
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
-                                <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
+                                <li><a class="dropdown-item" href="{{ url('wishlist') }}"><i class="fa fa-heart"></i> My Wishlist</a></li>
                                 <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
