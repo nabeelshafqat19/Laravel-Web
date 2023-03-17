@@ -66,6 +66,7 @@ class View extends Component
     }
 
 
+
     public function incrementQuantity()
     {
         if($this->quantityCount < 10){
@@ -78,6 +79,8 @@ class View extends Component
         $this->quantityCount--;
         }
 
+
+    }
     public function addToCart(int $productId)
     {
        if(Auth::check())
@@ -214,6 +217,22 @@ class View extends Component
             'status' => 401
           ]);
        }
+    }
+
+
+
+    public function incrementQuantity()
+    {
+        if($this->quantityCount < 10){
+        $this->quantityCount++;
+        }
+    }
+    public function decrementQuantity()
+    {
+        if($this->quantityCount > 1){
+        $this->quantityCount--;
+        }
+
 
     }
 
