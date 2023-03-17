@@ -118,6 +118,8 @@ class View extends Component
                                      'product_color_id' => $this->productColorId,
                                      'quantity' => $this->quantityCount
                                     ]);
+
+                                    $this->emit('CartAddedUpdated');
                                  $this->dispatchBrowserEvent('message', [
                                      'text' => 'Product Added to Cart',
                                      'type' => 'success',
@@ -174,6 +176,8 @@ class View extends Component
                                  'product_id' => $productId,
                                  'quantity' => $this->quantityCount
                                 ]);
+                                
+                                $this->emit('CartAddedUpdated');
                               $this->dispatchBrowserEvent('message', [
                                   'text' => 'Product Added to Cart',
                                  'type' => 'success',
@@ -218,23 +222,19 @@ class View extends Component
           ]);
        }
     }
-
-
-
     public function incrementQuantity()
-    {
+     {
         if($this->quantityCount < 10){
         $this->quantityCount++;
         }
-    }
-    public function decrementQuantity()
-    {
+     }
+     public function decrementQuantity()
+     {
         if($this->quantityCount > 1){
         $this->quantityCount--;
         }
-
-
     }
+
 
     public function mount($category, $product)
     {
