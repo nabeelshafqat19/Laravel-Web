@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 
 class View extends Component
 {
-    public $category, $product, $prodColorSelectedQuantity;
+    public $category, $product, $prodColorSelectedQuantity, $quantityCount = 1;
 
     public function colorSelected($productColorId)
     {
@@ -43,6 +43,7 @@ class View extends Component
                    'user_id' => auth()->user()->id,
                    'product_id' => $productId
                 ]);
+                $this->emit('wishlistAddedUpdated');
                 session()->flash('message','Wishlist Added Successfully');
                 $this->dispatchBrowserEvent('message', [ 
                     'text' => 'Wishlist Added Successfully',
@@ -63,6 +64,7 @@ class View extends Component
             return false;
         }
     }
+
 
     public function addToCart(int $productId)
     {
@@ -200,6 +202,19 @@ class View extends Component
             'status' => 401
           ]);
        }
+
+    public function incrementQuantity()
+    {
+        if($this->quantityCount < 10){
+        $this->quantityCount++;
+        }
+    }
+    public function decrementQuantity()
+    {
+        if($this->quantityCount > 1){
+        $this->quantityCount--;
+        }
+
     }
 
     public function mount($category, $product)
