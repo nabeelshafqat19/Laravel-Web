@@ -203,19 +203,19 @@ class View extends Component
           ]);
        }
 
+    }
     public function incrementQuantity()
-    {
+     {
         if($this->quantityCount < 10){
         $this->quantityCount++;
         }
-    }
-    public function decrementQuantity()
-    {
+     }
+     public function decrementQuantity()
+     {
         if($this->quantityCount > 1){
         $this->quantityCount--;
         }
-
-    }
+      }
 
     public function mount($category, $product)
     {
