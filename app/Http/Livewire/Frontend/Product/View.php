@@ -219,6 +219,10 @@ class View extends Component
         }
     }
 
+
+
+
+
     public function mount($category, $product)
     {
         $this->category = $category;
