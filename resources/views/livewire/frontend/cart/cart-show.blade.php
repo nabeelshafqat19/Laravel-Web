@@ -66,11 +66,18 @@
                                     </div>
                                     <div class="col-md-1 my-auto">
                                         <label class="price">Rs{{ $cartItem->product->selling_price * $cartItem->quantity }} </label>
+                                        @php $totalPrice += $cartItem->product->selling_price * $cartItem->quantity @endphp
                                     </div>
                                     <div class="col-md-2 col-5 my-auto">
                                         <div class="remove">
-                                            <a href="" class="btn btn-danger btn-sm">
+                                            <button type="button" wire:loading.attr="disabled" wire:click="removeCartItem({{ $cartItem->id }})" class="btn btn-danger btn-sm">
+                                            <span wire:loading.remove wire:target="removeCartItem({{ $cartItem->id }})">
                                                 <i class="fa fa-trash"></i> Remove
+                                            </span>   
+                                            <span wire:loading wire:target="removeCartItem({{ $cartItem->id }})">
+                                                <i class="fa fa-trash"></i> Removing
+                                            </span>     
+                                            
                                             </a>
                                         </div>
                                     </div>
@@ -84,6 +91,24 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-8 my-md-auto mt-3">
+                    <h4>
+                        Get the best deals & Offers <a href="{{ url('/collections') }}">Shop now</a>
+                    </h4>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="shadow-sm bg-white p-3">
+                        <h4>Total:
+                            <span class="float-end">Rs{{ $totalPrice }}</span>
+                        </h4>
+                        <hr>
+                        <a href="{{ url('/checkout'} }" class="btn btn-warning w-100">Checkout</a>
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     </div>
