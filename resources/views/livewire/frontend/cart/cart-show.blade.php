@@ -104,11 +104,9 @@
                             <span class="float-end">Rs{{ $totalPrice }}</span>
                         </h4>
                         <hr>
-<<<<<<< Updated upstream
+
                         <a href="{{ url('/checkout') }}" class="btn btn-warning w-100">Checkout</a>
-=======
-                        <a href="{{ url('/checkout'} }" class="btn btn-warning w-100">Checkout</a>
->>>>>>> Stashed changes
+
                     </div>
                 </div>
             </div>
