@@ -1,11 +1,11 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
-          <a class="navbar-brand brand-logo" href="index.html">
+          <a class="navbar-brand brand-logo" href="">
             <!-- <img src="images/logo.svg" alt="logo"/> -->
-          <h10 style="color: Black">Best Cotton</h10>
+          <h3 style="color: Black">Best Cotton</h3>
           </a> 
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/faces/7.png" alt="logo"/></a>
+          <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="logo" width="40px" height="20px"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/3.png" alt="profile"/>
+            <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="logo" width="10px" height="10px"/></a>
               <span class="nav-profile-name">{{ Auth::user()->name }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
