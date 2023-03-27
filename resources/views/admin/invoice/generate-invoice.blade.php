@@ -84,7 +84,7 @@
         <thead>
             <tr>
                 <th width="50%" colspan="2">
-                <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="Profile Pic" width="120px" height="70px"/></a>
+                    <h2 class="text-start">Best Cotton</h2>
                 </th>
                 <th width="50%" colspan="2" class="text-end company-data">
                     <span>Invoice Id: #{{ $order->id }}</span> <br>
