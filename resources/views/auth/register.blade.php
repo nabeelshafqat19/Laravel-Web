@@ -60,10 +60,20 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <label class="" for="">
+                                    {{ __('Already have an account?') }}
+                                    <a class="btn btn-light" href="{{ route('login') }}">
+                                    {{ __('Login Here') }}
+                                    </a>
+                                </label>
+                            </div>
+                        </div>
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Register') }}
                                 </button>
                             </div>

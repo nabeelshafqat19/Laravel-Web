@@ -58,7 +58,7 @@
         <div class="row">
           <div class="col-md-12">
             <h4>Trending Products</h4>
-            <div class="underline"></div>
+            <div class="underline mb-4"></div>
           </div>
           @if($trendingProducts)
             <div class="col-md-12">

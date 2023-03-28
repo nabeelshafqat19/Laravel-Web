@@ -50,9 +50,20 @@
                             </div>
                         </div>
 
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <label class="" for="">
+                                    {{ __('Dont have an account?') }}
+                                    <a class="btn btn-light" href="{{ route('register') }}">
+                                        {{ __('Register Now') }}
+                                    </a>
+                                </label>
+                            </div>
+                        </div>
+
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-dark">
                                     {{ __('Login') }}
                                 </button>
 
