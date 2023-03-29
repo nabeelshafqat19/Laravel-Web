@@ -1,3 +1,42 @@
+ /*Footer */
+ .footer-area{
+    padding: 40px 0px;
+    margin-top: 20px;
+    background-color: #f1eeee;
+    color: #000000;
+}
+.footer-area a{
+    text-decoration: none;
+    color: #000000;
+}
+.footer-area .footer-heading{
+    font-size: 24px;
+    color: #000000;
+}
+.footer-area .footer-underline{
+    height: 1px;
+    width: 70px;
+    background-color: #000000;
+    margin: 10px 0px;
+}
+.copyright-area{
+    padding: 14px 0px;
+    background-color: #000000;
+}
+.copyright-area p{
+    margin-bottom: 0px;
+    color: #ffffff;
+}
+.copyright-area .social-media{
+    text-align: end;
+    color: #fff;
+}
+.copyright-area .social-media a{
+    margin: 0px 10px;
+    color: #ffffff;
+    width: 20px;
+}
+ /*Footer end */
  .underline{
     height: 4px;
     width: 100px;

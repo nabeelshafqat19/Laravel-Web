@@ -83,10 +83,13 @@
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/collections') }}">All Categories</a>
+                            <a class="nav-link" href="{{ url('/collections') }}">Categories</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('new-arrivals') }}">New Arrivals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('featured-products') }}">Featured Products</a>
                         </li>
                     </ul>
                 </div>
