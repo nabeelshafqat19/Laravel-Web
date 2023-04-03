@@ -61,7 +61,7 @@
                         Get Connected:
                         <a href=""><i class="fa fa-facebook"></i></a>
                         <a href=""><i class="fa fa-twitter"></i></a>
-                        <a href=""><i class="fa fa-instagram"></i></a>
+                        <a href="https://instagram.com/talhanaveed671?igshid=ZDdkNTZiNTM="><i class="fa fa-instagram"></i></a>
                         <a href=""><i class="fa fa-youtube"></i></a>
                     </div>
                 </div>
