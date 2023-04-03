@@ -19,17 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::controller(App\Http\Controllers\Frontend\FrontendController::class)->group(function () {
-
-    Route::get('/','index');
-    Route::get('/collections','categories');
-    Route::get('/collections/{category_slug}','products');
-    Route::get('/collections/{category_slug}/{product_slug}','productView');
-
-    Route::get('/new-arrivals','newArrival');
-    Route::get('/featured-products','featuredProducts');
-});
-
+Route::get('/',[App\Http\Controllers\Frontend\FrontendController::class, 'index']);
+Route::get('/collections', [App\Http\Controllers\Frontend\FrontendController::class, 'categories']);
+Route::get('/collections/{category_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'products']);
+Route::get('/collections/{category_slug}/{product_slug}', [App\Http\Controllers\Frontend\FrontendController::class, 'productView']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('wishlist', [App\Http\Controllers\Frontend\WishlistController::class, 'index']);
@@ -50,7 +43,9 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index']);
 
-   
+    Route::get('settings', [App\Http\Controllers\Admin\SettingController::class, 'index']);
+    
+    Route::post('settings', [App\Http\Controllers\Admin\SettingController::class, 'store']);
 
 
 
@@ -105,14 +100,7 @@ Route::prefix('admin')->middleware(['auth','isAdmin'])->group(function () {
         
         Route::get('/invoice/{orderId}', 'viewInvoice');
         Route::get('/invoice/{orderId}/generate', 'generateInvoice');
-    });
+      });
 
-    Route::controller(App\Http\Controllers\Admin\UserController::class)->group(function () {
-        Route::get('/users', 'index');
-        Route::get('/users/create', 'create');
-        Route::post('/users', 'store');
-        Route::get('/users/{user_id}/edit', 'edit');
-        Route::put('users/{user_id}','update');
-        Route::get('users/{user_id}/delete','destroy');
-    });
 });
+
