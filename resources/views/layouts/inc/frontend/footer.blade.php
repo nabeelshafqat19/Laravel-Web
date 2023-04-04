@@ -60,7 +60,6 @@
                 <div class="col-md-4">
                     <div class="social-media">
                         Get Connected:
-                        {{ $appSetting->phone1 ?? 'phone 1'}}
                         @if($appSetting->facebook)
                         <a href="{{ $appSetting->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
                         @endif
