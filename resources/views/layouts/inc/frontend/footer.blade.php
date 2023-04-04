@@ -68,7 +68,7 @@
                         <a href="{{ $appSetting->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
                         @endif
                         @if($appSetting->instagram)
-                        <a href="{{ $appSetting->instagram }}" target="_blank"><i class="fa fa-instagram"></i></a>
+                        <a href="https://instagram.com/talhanaveed671?igshid=ZDdkNTZiNTM=" target="_blank"><i class="fa fa-instagram"></i></a>
                         @endif
                         @if($appSetting->youtube)
                         <a href="{{ $appSetting->youtube }}" target="_blank"><i class="fa fa-youtube"></i></a>
