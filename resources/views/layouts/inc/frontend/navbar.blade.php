@@ -6,9 +6,9 @@
                      <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="Profile Pic" width="120px" height="70px"/></a>
                     </div>
                     <div class="col-md-5 my-auto">
-                        <form role="search">
+                        <form action="{{ url('search') }}" method="GET" role="search">
                             <div class="input-group">
-                                <input type="search" placeholder="Search your product" class="form-control" />
+                                <input type="search" name="search" value="{{ Request::get('search') }}" placeholder="Search your product" class="form-control" />
                                 <button class="btn bg-black" type="submit">
                                     <i style="color: whitesmoke;" class="fa fa-search"></i>
                                 </button>
