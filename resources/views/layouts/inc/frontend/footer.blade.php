@@ -33,17 +33,19 @@
                     <div class="footer-underline"></div>
                     <div class="mb-2">
                         <p>
-                            <i class="fa fa-map-marker"></i>
-                            {{ $appSetting->address ?? 'address'}}
+                            <a href="" class="text-black">
+                                <i class="fa fa-map-marker"></i>
+                                {{ $appSetting->address ?? 'address'}}
+                            </a>
                         </p>
                     </div>
                     <div class="mb-2">
-                        <a href="" class="text-black">
+                        <a href="tel:+{{ $appSetting->phone1 ?? 'phone1'}}" class="text-black">
                             <i class="fa fa-phone"></i>{{ $appSetting->phone1 ?? 'phone1'}}
                         </a>
                     </div>
                     <div class="mb-2">
-                        <a href="" class="text-black">
+                        <a href="mailto:{{ $appSetting->email1 ?? 'email 1'}}" class="text-black">
                             <i class="fa fa-envelope"></i>{{ $appSetting->email1 ?? 'email 1'}}
                         </a>
                     </div>
