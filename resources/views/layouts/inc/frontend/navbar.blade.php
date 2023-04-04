@@ -4,6 +4,7 @@
                 <div class="row">
                     <div class="col-md-2 my-auto d-none d-sm-none d-md-block d-lg-block">
                      <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="Profile Pic" width="120px" height="70px"/></a>
+                     <a href="{{ url('/') }}"></a>
                     </div>
                     <div class="col-md-5 my-auto">
                         <form role="search">
