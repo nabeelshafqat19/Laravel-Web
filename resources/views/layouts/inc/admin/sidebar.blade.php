@@ -7,6 +7,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{ url('admin/orders') }}">
+              <i class="mdi mdi-sale menu-icon"></i>
+              <span class="menu-title">Orders</span>
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-view-list menu-icon"></i>
               <span class="menu-title">Category</span>
@@ -19,12 +25,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url('admin/orders') }}">
-              <i class="mdi mdi-sale menu-icon"></i>
-              <span class="menu-title">Orders</span>
-            </a>
-          </li>
+          
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#products" aria-expanded="false" aria-controls="products">
               <i class="mdi mdi-plus-circle menu-icon"></i>
