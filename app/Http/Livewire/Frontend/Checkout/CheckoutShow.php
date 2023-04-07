@@ -73,6 +73,14 @@ class CheckoutShow extends Component
 
             Cart::where('user_id', auth()->user()->id)->delete();
 
+            try {
+                $order = Order::findOrFail();
+                Mail::to("$order->email")->send(new PlaceOrderMailable($order));
+                // Mail Sent Successfully
+            } catch (\Exception $e) {
+                // Something went wrong
+            }
+
             session()->flash('message','Order Placed Successfully');
             $this->dispatchBrowserEvent('message',[
                 'text' => 'Order Placed Successfully',
@@ -104,6 +112,10 @@ class CheckoutShow extends Component
     {
         $this->fullname = auth()->user()->name;
         $this->email = auth()->user()->email;
+
+        $this->phone = auth()->user()->userDetail->phone;
+        $this->pincode = auth()->user()->userDetail->pin_code;
+        $this->address = auth()->user()->userDetail->address;
         
         $this->totalProductAmount = $this->totalProductAmount();
         return view('livewire.frontend.checkout.checkout-show', [
