@@ -13,21 +13,19 @@
              </h4>
              <div class="underline mb-4"></div>
             </div>
-            
             <div class="col-md-10">
-
-                @if (session('message'))
+                @if(session('message'))
                     <p class="alert alert-success">{{ session('message') }}</p>
                 @endif
 
-                @if ($errors->any())
+                @if($errors->any())
                 <ul class="alert alert-danger">
-                    @foreach ($errors->all() as $error)
+                    @foreach($errors->all() as $error)
                     <li class="text-danger">{{ $error }}</li>
                     @endforeach
                 </ul>
                 @endif
-
+                
                 <div class="card shadow">
                     <div class="card-header bg-black">
                         <h4 class="mb-0 text-white">User Details</h4>

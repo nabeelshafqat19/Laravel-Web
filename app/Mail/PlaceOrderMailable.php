@@ -38,7 +38,7 @@ class PlaceOrderMailable extends Mailable
     {
         $subject = "Order Placed Successfully, Thank You";
         return $this->subject($subject)
-                    ->view('admin.invoice.generate-invoice');
+                    ->view('frontend.users.invoice.mail-invoice');
     }
 
     /**

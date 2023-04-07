@@ -21,7 +21,7 @@ class UserController extends Controller
         $request->validate([
             'username' => ['required', 'string'],
             'phone' => ['required', 'digits:11'],
-            'pin_code' => ['required', 'digits:6'],
+            'pin_code' => ['required', 'digits:5'],
             'address' => ['required', 'string','max:499'],
         ]);
 
@@ -41,7 +41,7 @@ class UserController extends Controller
             ]
         );
 
-        return redirect()->back()->with('message', 'User Profile Updated');
+        return redirect()->back()->with('message','User Profile Updated');
     }
 
     public function passwordCreate()

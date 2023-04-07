@@ -6,7 +6,9 @@ use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Orderitem;
 use Livewire\Component;
+use App\Mail\PlaceOrderMailable;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutShow extends Component
 {
@@ -74,10 +76,10 @@ class CheckoutShow extends Component
             Cart::where('user_id', auth()->user()->id)->delete();
 
             try {
-                $order = Order::findOrFail();
+                $order = Order::findOrFail($codOrder->id);
                 Mail::to("$order->email")->send(new PlaceOrderMailable($order));
                 // Mail Sent Successfully
-            } catch (\Exception $e) {
+            }catch(\Exception $e) {
                 // Something went wrong
             }
 
