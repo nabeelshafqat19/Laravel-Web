@@ -1,5 +1,5 @@
 <div>
-<div class="py-3 py-md-5">
+    <div class="py-3 py-md-5">
         <div class="container">
 
             <div class="row">
@@ -36,6 +36,7 @@
                         <p class="product-path">
                             Home / {{ $product->category->name }} / {{ $product->name }}
                         </p>
+                        <p class="product-path">Brand : {{ $product->brand}}</p>
                         <div>
                             <span class="selling-price">Rs{{ $product->selling_price }}</span>
                             <span class="original-price">Rs{{ $product->original_price }}</span>
@@ -118,6 +119,51 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-3 py-md-5 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mb-3">
+                    <h3>Related 
+                        @if($category) {{ $category->name}} @endif
+                        Products</h3>
+                    <div class="underline"></div>
+                </div>
+
+                @forelse ($category->products as $relatedproductItem)
+                    <div class="col-md-3 mb-3">
+                        <div class="product-card">
+                            <div class="product-card-img">
+                                <label class="stock bg-primary">New</label>
+                                
+                                @if ($relatedproductItem->productImages->count() > 0)
+                                <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">
+                                    <img src="{{ asset($relatedproductItem->productImages[0]->image) }}" alt="{{ $relatedproductItem->name }}">
+                                </a>
+                                @endif
+                            </div>
+                            <div class="product-card-body">
+                                <p class="product-brand">{{ $relatedproductItem->brand }}</p>
+                                <h5 class="product-name">
+                                    <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">
+                                        {{$relatedproductItem->name}}
+                                    </a>
+                                </h5>
+                                <div>
+                                    <span class="selling-price">Rs{{$relatedproductItem->selling_price}}</span>
+                                    <span class="original-price">Rs{{$relatedproductItem->original_price}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @empty
+                        <div class="col-md-12 p-2">
+                         <h4>No Products Available</h4>
+                        </div>
+                    @endforelse
             </div>
         </div>
     </div>
