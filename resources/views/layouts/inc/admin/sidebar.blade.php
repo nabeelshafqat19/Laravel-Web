@@ -45,7 +45,7 @@
                 <li class="nav-item  {{ Request::is('admin/products/create') ? 'active':'' }}"> <a class="nav-link" href="{{ url('admin/products/create') }}">Add Products</a>
               </li>
                 <li class="nav-item"> 
-                  <a class="nav-link {{ Request::is('admin/products') || Request::is('admin/category/*/edit') ? 'active':'' }}" href="{{ url('admin/category') }}" href="{{ url('admin/products') }}">View Products</a>
+                  <a class="nav-link {{ Request::is('admin/products') || Request::is('admin/product/*/edit') ? 'active':'' }}" href="{{ url('admin/products') }}">View Products</a>
               </li>
               </ul>
             </div>

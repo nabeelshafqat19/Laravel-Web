@@ -1,4 +1,3 @@
-
 <div>
 
     @include('livewire.admin.brand.modal-form')
@@ -68,3 +67,4 @@
   });
   </script>
 @endpush
+
