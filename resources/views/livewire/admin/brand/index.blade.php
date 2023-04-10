@@ -1,8 +1,3 @@
-@extends('layouts.admin')
-
-@section('title','Brands')
-
-@section('content')
 <div>
 
     @include('livewire.admin.brand.modal-form')
@@ -72,4 +67,3 @@
   });
   </script>
 @endpush
-@endsection
