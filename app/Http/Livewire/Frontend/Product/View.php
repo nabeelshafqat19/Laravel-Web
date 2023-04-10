@@ -208,7 +208,7 @@ class View extends Component
     }
     public function incrementQuantity()
     {
-        if($this->quantityCount < 10){
+        if($this->quantityCount < 1000){
         $this->quantityCount++;
         }
     }

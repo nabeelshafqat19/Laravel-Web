@@ -77,7 +77,7 @@
                         <div class="mt-2">
                             <div class="input-group">
                                 <span class="btn btn1" wire:click="decrementQuantity"><i class="fa fa-minus"></i></span>
-                                <input type="text" wire:model="quantityCount" value="{{ $this->quantityCount }}" readonly class="input-quantity" />
+                                <input type="text" wire:model="quantityCount" value="{{ $this->quantityCount }}" class="input-quantity" />
                                 <span class="btn btn1" wire:click="incrementQuantity"><i class="fa fa-plus"></i></span>
                             </div>
                         </div>
