@@ -36,7 +36,7 @@
                         <p class="product-path">
                             Home / {{ $product->category->name }} / {{ $product->name }}
                         </p>
-                        <p class="product-path">Brand : {{ $product->brand}}</p>
+                        <p class="product-path">Quality : {{ $product->brand}}</p>
                         <div>
                             <span class="selling-price">Rs{{ $product->selling_price }}</span>
                             <span class="original-price">Rs{{ $product->original_price }}</span>
