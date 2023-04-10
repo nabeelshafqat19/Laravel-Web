@@ -1,7 +1,6 @@
 <div>
     <div class="py-3 py-md-5">
         <div class="container">
-
             <div class="row">
                 <div class="col-md-5 mt-3">
                     <div class="bg-white border" wire:ignore>
@@ -71,9 +70,6 @@
                                 @endif
 
                             @endif
-
-
-
                         </div>
                         <div class="mt-2">
                             <div class="input-group">
@@ -173,62 +169,6 @@
             </div>
         </div>
     </div>
-</div>
-
-<div class="py-3 py-md-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 mb-3">
-                    <h3>Related 
-                        @if($product) {{ $product->name}} @endif
-                        Products</h3>
-                    <div class="underline"></div>
-                </div>
-
-                <div class="col-md-12">
-                    @if ($category)
-                 <div class="owl-carousel owl-theme four-carousel">
-                 @foreach ($category->relatedproducts as $relatedproductItem)
-                 @if ($relatedproductItem->brand == "$product->brand")
-                    <div class="item mb-3">
-                        <div class="product-card">
-                            <div class="product-card-img">
-                                <label class="stock bg-primary">New</label>
-                                
-                                @if ($relatedproductItem->productImages->count() > 0)
-                                <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">
-                                    <img src="{{ asset($relatedproductItem->productImages[0]->image) }}" alt="{{ $relatedproductItem->name }}">
-                                </a>
-                                @endif
-                            </div>
-                            <div class="product-card-body">
-                                <p class="product-brand">{{ $relatedproductItem->brand }}</p>
-                                <h5 class="product-name">
-                                    <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">
-                                        {{$relatedproductItem->name}}
-                                    </a>
-                                </h5>
-                                <div>
-                                    <span class="selling-price">Rs{{$relatedproductItem->selling_price}}</span>
-                                    <span class="original-price">Rs{{$relatedproductItem->original_price}}</span>
-                                </div>
-                            </div>
-                        </div>
-                        </div>
-                        @endif
-                        @endforeach
-                    </div>
-                     @else
-                    <div class="p-2">
-                         <h4>No Related Products Available</h4>
-                        </div>
-                    @endif
-                    </div>
-                 </div>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 @push('scripts')
