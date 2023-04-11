@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $brands = Brand::all();
+        $brands = Brand::latest()->take(3)->get();
         $colors = Color::where('status','0')->get();
         return view('admin.products.create', compact('categories', 'brands','colors'));
     }
@@ -89,7 +89,7 @@ class ProductController extends Controller
     public function edit(int $product_id)
     {
         $categories = Category::all();
-        $brands = Brand::all();
+        $brands = Brand::latest()->take(3)->get();
         $product = Product::findOrFail($product_id);
         $product_color = $product->productColors->pluck('color_id')->toArray();
         $colors = Color::whereNotIn('id',$product_color)->get();
