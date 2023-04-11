@@ -1,5 +1,5 @@
 <div>
-<div class="py-3 py-md-5 bg-light">
+<div class="py-3 py-md-5">
         <div class="container">
             <h3>My Wishlist</h3>
             <hr>
