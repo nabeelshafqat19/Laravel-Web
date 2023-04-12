@@ -22,7 +22,6 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Color Name</th>
                             <th>Color Code</th>
                             <th>Status</th>
                             <th>Action</th>

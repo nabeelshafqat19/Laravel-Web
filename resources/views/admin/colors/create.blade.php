@@ -31,7 +31,7 @@
                     </div>
                     <div class="mb-3">
                         <label>Status</label> <br/>
-                        <input type="checkbox" name="status" style="width:30px; height:30px" /> Checked=Hidden,UnChecked=Visible
+                        <input type="checkbox" name="status" style="width:30px; height:30px" />
                     </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Save</button>

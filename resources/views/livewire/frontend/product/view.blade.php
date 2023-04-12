@@ -38,23 +38,26 @@
                         <p class="product-path">Quality : {{ $product->brand}}</p>
                         <div>
                             <span class="selling-price">Rs{{ $product->selling_price }}</span>
+                            <span class="color-Item">Rs{{ $colorItem->color->name }}</span>
+                        </div>
+                        <hr>
+                        <div>
+                        <div>
+                            <span class="selling-price">Rs{{ $product->selling_price }}</span>
                             <span class="original-price">Rs{{ $product->original_price }}</span>
                         </div>
-                        <div>
+                            <h6>Select Color</h6>
                             @if($product->productColors->count() > 0)
                                 @if($product->productColors)
                                     @foreach($product->productColors as $colorItem)
                                      <!-- <input type="radio" name="colorSelection" value="{{ $colorItem->id }}" /> {{ $colorItem->color->name }} -->
                                      <label class="colorSelectionLabel" style="background-color: {{ $colorItem->color->code }}" 
-                                     wire:click="colorSelected({{ $colorItem->id }})"
-                                     >
-                                     {{ $colorItem->color->name }}
+                                     wire:click="colorSelected({{ $colorItem->id }})">
                                          
                                      </label>
                                     @endforeach
                                 @endif
                                 <div>
-
                                     @if ($this->prodColorSelectedQuantity == 'outOfStock')
                                         <label class="btn-sm py-1 mt-2 text-white bg-danger">Out of Stock</label>
                                     @elseif($this->prodColorSelectedQuantity > 0)

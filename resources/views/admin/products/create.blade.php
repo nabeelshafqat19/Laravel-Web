@@ -171,21 +171,20 @@
                               Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border: 1px solid" />
                             </div>
                           </div>
+                          
                           @empty
                           <div class="col-md-12">
                             <h1>No colors found</h1>
                             </div>
                           @endforelse
-                          
+                          <div class="py-2 float-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
                         </div>
                       
                     </div>
                  </div>
-
                </div>
-              <div class="py-2 float-end">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
               </form>
             </div>
          </div>

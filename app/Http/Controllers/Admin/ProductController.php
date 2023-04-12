@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $brands = Brand::all();
+        $brands = Brand::latest()->take(3)->get();
         $colors = Color::where('status','0')->get();
         return view('admin.products.create', compact('categories', 'brands','colors'));
     }
