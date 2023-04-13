@@ -1,4 +1,50 @@
 <div>
+    <div class="footer">
+        <div class="banner-with-contents">
+            <div class="content-asset">
+                <div class="position-relative main-email-container">
+                    <picture>
+                            <source media="(min-width: 768px)" srcset="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" alt="Email Footer banner">
+                            <source media="(min-width: 320px)" srcset="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" alt="Email Footer banner">
+                            <img alt="Email Footer banner" src="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" title="Valentine's Day Sale">
+                    </picture>
+                    <div class="content-container-main-email">
+                        <div class="container">
+                            <div class="row align-items-center row-contanier-box-2 pt-zero-wrapper">
+                                <div class="col-lg-5 col-md-5 col-sm-12">
+                                    <div class="left-content-section left-content-1" style="font-style: italic">
+                                        <p>Join the best cotton Get 10% off</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-7 col-sm-12">
+                                    <div class="main-form">
+                                        <form role="form" class="d-flex form-subscription-wrapper" name="newsletterSubscribeFooterRedesign" id="newsletterSubscribeFooterRedesign" action="https://www.mvmt.com/on/demandware.store/Sites-MVMTUS-Site/en_US/Newsletter-Subscribe?pageType=footer" method="POST">
+                                            <div class="input-group">
+                                                <input type="email" class="form-control email-subscription-input email-input" id="hpEmailSignUp" name="hpEmailSignUp" placeholder="Enter Email Address">
+                                                <button type="button" style="border-radius:28px" class="btn btn-subscribe-wrapper-box">Subscribe</button>
+                                            </div>
+                                            <div class="invalid-feedback"></div>
+                                            <div class="submission-status-1 d-none" data-errormsg="Please enter valid email address">
+                                                Please enter valid email address
+                                            </div>
+                                            <p class="bottom-slot-content-wrapper bottom-text">
+                                                <span class="bolder"><a href="">Terms and
+                                                    Conditions</a>&nbsp;apply.
+                                                </span>
+                                                <span class="bolder">View our <a href="">privacy
+                                                policy</a>
+                                                </span>
+                                            </p>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="footer-area">
         <div class="container">
             <div class="row">

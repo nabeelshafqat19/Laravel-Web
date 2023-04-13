@@ -15,7 +15,7 @@
                     <div class="col-md-3">
                         <div class="product-card">
                             <div class="product-card-img">
-                                <label class="stock bg-primary">New</label>
+                                <label class="stock bg-primary" style="border-radius:20px">New</label>
                                 
                                 @if ($productItem->productImages->count() > 0)
                                 <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
@@ -26,7 +26,7 @@
                             <div class="product-card-body">
                                 <p class="product-brand">{{ $productItem->brand }}</p>
                                 <h5 class="product-name">
-                                    <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                                    <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="text-dark">
                                         {{$productItem->name}}
                                     </a>
                                 </h5>
@@ -44,7 +44,7 @@
                     @endforelse
 
                     <div class="text-center">
-                        <a href="{{ url('collections') }}" class="btn btn-warning px-3">Shop More</a>
+                        <a href="{{ url('collections') }}" style="border-radius:28px" class="btn btn-warning px-3">Shop More</a>
                     </div>
         </div>
     </div>

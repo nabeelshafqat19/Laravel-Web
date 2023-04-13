@@ -33,7 +33,7 @@
                             <div class="cart-item">
                                 <div class="row">
                                     <div class="col-md-6 my-auto">
-                                        <a href="{{ url('collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}">
+                                        <a href="{{ url('collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}" class="text-dark">
                                             <label class="product-name">
 
                                                 @if ($cartItem->product->productImages)

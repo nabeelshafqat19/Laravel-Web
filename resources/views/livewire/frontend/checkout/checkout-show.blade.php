@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12 mb-4">
                     <div class="shadow bg-white p-3">
-                        <h4 class="text-primary">
+                        <h4 class="text-dark">
                             Item Total Amount :
                             <span class="float-end">Rs{{$this->totalProductAmount}}</span>
                         </h4>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-12">
                     <div class="shadow bg-white p-3">
-                        <h4 class="text-primary">
+                        <h4 class="text-dark">
                             Basic Information
                         </h4>
                         <hr>

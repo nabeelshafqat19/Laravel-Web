@@ -56,17 +56,17 @@
                                 <div>
 
                                     @if ($this->prodColorSelectedQuantity == 'outOfStock')
-                                        <label class="btn-sm py-1 mt-2 text-white bg-danger">Out of Stock</label>
+                                        <label class="btn-sm py-1 mt-2 text-white bg-danger" style="border-radius:20px">Out of Stock</label>
                                     @elseif($this->prodColorSelectedQuantity > 0)
-                                        <label class="btn-sm py-1 mt-2 text-white bg-success">In Stock</label>
+                                        <label class="btn-sm py-1 mt-2 text-white bg-success" style="border-radius:20px">In Stock</label>
                                     @endif
                                 </div>
                             @else    
 
                                 @if($product->quantity)
-                                 <label class="btn-sm py-1 mt-2 text-white bg-success">In Stock</label>
+                                 <label class="btn-sm py-1 mt-2 text-white bg-success" style="border-radius:20px">In Stock</label>
                                 @else
-                                 <label class="btn-sm py-1 mt-2 text-white bg-danger">Out of Stock</label>
+                                 <label class="btn-sm py-1 mt-2 text-white bg-danger" style="border-radius:20px">Out of Stock</label>
                                 @endif
 
                             @endif
@@ -136,7 +136,7 @@
                     <div class="item mb-3">
                         <div class="product-card">
                             <div class="product-card-img">
-                                <label class="stock bg-primary">New</label>
+                                <label class="stock bg-primary" style="border-radius:20px">New</label>
                                 
                                 @if ($relatedproductItem->productImages->count() > 0)
                                 <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">

@@ -2,15 +2,19 @@
 
 @section('content')
 <div class="container">
+</br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <h5><div class="card-header">{{ __('Register') }}</div></h5>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-
+                        <div class="content-asset">
+                            <h3 style="text-align:center">New To Best Cotton?</h3>
+                            <p style="text-align:center">Create a new Best Cotton account and get faster checkout and be the first to know about our exclusive offers.</p>
+                        </div>
                         <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 

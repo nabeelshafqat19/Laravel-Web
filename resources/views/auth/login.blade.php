@@ -2,15 +2,21 @@
 
 @section('content')
 <div class="container">
+</br>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <h5><div class="card-header">{{ __('Login') }}</div></h5>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
+                        <div class="login-welcome-back">
+                            <div class="content-asset">
+                            <h3 style="text-align:center">Welcome Back</h3>
+                            <p  style="text-align:center">Login to your existing Best Cotton account.</p>
+                            </div> 
+                        </div>
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
