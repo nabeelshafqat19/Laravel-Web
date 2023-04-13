@@ -88,6 +88,10 @@
                      <label>Description</label>
                      <textarea name="description" class="form-control" rows="4"></textarea>
                     </div>
+                 <div class="mb-3">
+                     <label>Additional_information</label>
+                     <textarea name="additional_information" class="form-control" rows="4"></textarea>
+                    </div>
                  </div>
                  <div class="tab-pane fade border p-3" id="seotags-tab-pane" role="tabpanel" aria-labelledby="seotags-tab" tabindex="0">
                     <div class="mb-3">

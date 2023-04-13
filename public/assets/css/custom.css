@@ -157,10 +157,18 @@
     font-weight: 400;
     text-decoration: line-through;
 }
+.product-view .btn2{
+    border: 1px solid;
+    margin-right: 0px;
+    margin-left: 15px;
+    border-radius: 90px;
+    font-size: 14px;
+    margin-top: 10px;
+}
 .product-view .btn1{
     border: 1px solid;
-    margin-right: 3px;
-    border-radius: 0px;
+    margin-right: 1px;
+    border-radius: 70px;
     font-size: 14px;
     margin-top: 10px;
 }
@@ -168,9 +176,13 @@
     background-color: #000000;
     color: #fff;
 }
+.product-view .btn2:hover{
+    background-color: #000000;
+    color: #fff;
+}
 .product-view .input-quantity{
     border: 1px solid #000;
-    margin-right: 3px;
+    margin-right: 0px;
     font-size: 12px;
     margin-top: 10px;
     width: 58px;
