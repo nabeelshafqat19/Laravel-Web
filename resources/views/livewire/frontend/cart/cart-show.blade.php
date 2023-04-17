@@ -70,15 +70,14 @@
                                     </div>
                                     <div class="col-md-2 col-5 my-auto">
                                         <div class="remove">
-                                            <button type="button" wire:loading.attr="disabled" wire:click="removeCartItem({{ $cartItem->id }})" class="btn btn-danger btn-sm">
+                                            <button type="button" wire:loading.attr="disabled" wire:click="removeCartItem({{ $cartItem->id }})" class="btn btn-danger btn-sm" style="border-radius: 28px">
                                             <span wire:loading.remove wire:target="removeCartItem({{ $cartItem->id }})">
                                                 <i class="fa fa-trash"></i> Remove
                                             </span>   
                                             <span wire:loading wire:target="removeCartItem({{ $cartItem->id }})">
                                                 <i class="fa fa-trash"></i> Removing
                                             </span>     
-                                            
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

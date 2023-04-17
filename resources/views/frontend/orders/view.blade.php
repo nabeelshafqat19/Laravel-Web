@@ -9,10 +9,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="shadow bg-white p-3">
-                        <h4 class="text-primary">
+                        <h4 class="text-dark">
                             <i class="fa fa-shopping-cart text-dark"></i>My Order Details
-                            <a href="{{ url('orders')}}" class="btn btn-danger btn-sm float-end">Back</a>
-                            <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm float-end mx-1">
+                            <a href="{{ url('orders')}}" class="btn btn-danger btn-sm float-end" style="border-radius: 28px">Back</a>
+                            <a href="{{ url('admin/invoice/'.$order->id.'/generate') }}" class="btn btn-primary btn-sm float-end mx-1" style="border-radius: 28px">
                                Download Invoice
                             </a>
                         </h4>
