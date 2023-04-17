@@ -147,7 +147,7 @@
                             <div class="product-card-body">
                                 <p class="product-brand">{{ $relatedproductItem->brand }}</p>
                                 <h5 class="product-name">
-                                    <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}">
+                                    <a href="{{ url('/collections/'.$relatedproductItem->category->slug.'/'.$relatedproductItem->slug) }}" class="text-dark">
                                         {{$relatedproductItem->name}}
                                     </a>
                                 </h5>

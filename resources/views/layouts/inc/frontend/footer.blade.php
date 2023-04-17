@@ -6,7 +6,7 @@
                     <picture>
                             <source media="(min-width: 768px)" srcset="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" alt="Email Footer banner">
                             <source media="(min-width: 320px)" srcset="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" alt="Email Footer banner">
-                            <img alt="Email Footer banner" src="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" title="Valentine's Day Sale">
+                            <img alt="Email Footer banner" src="{{ URL::asset('/admin/images/faces/emailsignupbackground.jpg') }}" title="">
                     </picture>
                     <div class="content-container-main-email">
                         <div class="container">
@@ -86,7 +86,7 @@
                         </p>
                     </div>
                     <div class="mb-2">
-                        <a href="tel:+{{ $appSetting->phone1 ?? 'phone1'}}" class="text-black">
+                        <a href="tel:{{ $appSetting->phone1 ?? 'phone1'}}" class="text-black">
                             <i class="fa fa-phone"></i>{{ $appSetting->phone1 ?? 'phone1'}}
                         </a>
                     </div>
