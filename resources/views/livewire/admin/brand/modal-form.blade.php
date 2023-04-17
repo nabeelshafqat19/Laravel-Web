@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Brands</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Quality</h1>
         <button type="button" wire:click="closeModal" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <form wire:submit.prevent="storeBrand">
@@ -19,12 +19,12 @@
             @error('category_id') <small class="text-danger">{{ $message }}</small> @enderror
           </div>
           <div class="mb-3">
-              <label>Brand Name</label>
+              <label>Quality Name</label>
               <input type="text" wire:model.defer="name" class="form-control">
               @error('name') <small class="text-danger">{{ $message }}</small> @enderror
           </div>
           <div class="mb-3">
-              <label>Brand Slug</label>
+              <label>Quality Slug</label>
               <input type="text" wire:model.defer="slug" class="form-control">
               @error('slug') <small class="text-danger">{{ $message }}</small> @enderror
           </div>

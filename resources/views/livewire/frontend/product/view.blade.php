@@ -108,7 +108,6 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="card">
               <form action="{{ url('admin/products') }}" method="POST" enctype="multipart/form-data">
                 @csrf
               <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -118,14 +117,9 @@
                   </button>
                 </li>
                <li class="nav-item" role="presentation">
-                  <button style=" font-weight: bold" class="nav-link" id="seotags-tab" data-bs-toggle="tab" data-bs-target="#seotags-tab-pane" type="button" role="tab" aria-controls="seotags-tab-pane" aria-selected="false">
+                  <button style=" font-weight: bold" class="nav-link" id="information-tab" data-bs-toggle="tab" data-bs-target="#information-tab-pane" type="button" role="tab" aria-controls="seotags-tab-pane" aria-selected="false">
                   ADDITIONAL INFORMATION
                   </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                  <button style=" font-weight: bold" class="nav-link" id="details-tab" data-bs-toggle="tab" data-bs-target="#details-tab-pane" type="button" role="tab" aria-controls="details-tab-pane" aria-selected="false">
-                    REVIEWS
-                   </button>
                 </li>
                 </ul>
                <div class="tab-content" id="myTabContent">
@@ -142,7 +136,7 @@
                         </div>
                     </div>
                  </div>
-                 <div class="tab-pane fade border p-3" id="seotags-tab-pane" role="tabpanel" aria-labelledby="seotags-tab" tabindex="0">
+                 <div class="tab-pane fade border p-3" id="information-tab-pane" role="tabpanel" aria-labelledby="information-tab" tabindex="0">
                     <div class="mb-3">
                      <div class="card-header bg-white">
                             <h4>Additional Information</h4>
@@ -155,17 +149,7 @@
                         </div>
                     </div>
                  </div>
-                 <div class="tab-pane fade border p-3" id="details-tab-pane" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
-                       <div class="mb-3">
-                       <div class="card-header bg-white">
-                            <h4>Reviews</h4>
-                            <div class="underline"></div>
-                        </div>
-                        <div class="card-body">
-                            <p>
-                              {!! $product->additional_information !!}
-                            </p>
-                        </div>
+                    </div>
                     </div>
                 </div>
                </div>
