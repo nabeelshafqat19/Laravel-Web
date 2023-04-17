@@ -9,7 +9,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="shadow bg-white p-3">
-                    <h4 class="mb-4">My Orders</h4>
+                    <h4 class="mb-4">My Orders
+                    <a href="{{ url('/')}}" class="btn btn-danger btn-sm float-end" style="border-radius: 28px">Back</a>
+                    </h4>
                     <hr>
 
                     <div class="table-responsive">
@@ -34,7 +36,7 @@
                                      <td>{{ $item->payment_mode }}</td>
                                      <td>{{ $item->created_at->format('d-m-Y') }}</td>
                                      <td>{{ $item->status_message }}</td>
-                                     <td><a href="{{ url('orders/'.$item->id) }}" class="btn btn-primary btn-sm">View</a></td>
+                                     <td><a href="{{ url('orders/'.$item->id) }}" class="btn btn-primary btn-sm" style="border-radius: 28px">View</a></td>
                                   </tr>
                                 @empty
                                     <tr>

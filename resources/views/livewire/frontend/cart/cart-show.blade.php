@@ -33,7 +33,7 @@
                             <div class="cart-item">
                                 <div class="row">
                                     <div class="col-md-6 my-auto">
-                                        <a href="{{ url('collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}">
+                                        <a href="{{ url('collections/'.$cartItem->product->category->slug.'/'.$cartItem->product->slug) }}" class="text-dark">
                                             <label class="product-name">
 
                                                 @if ($cartItem->product->productImages)
@@ -70,15 +70,14 @@
                                     </div>
                                     <div class="col-md-2 col-5 my-auto">
                                         <div class="remove">
-                                            <button type="button" wire:loading.attr="disabled" wire:click="removeCartItem({{ $cartItem->id }})" class="btn btn-danger btn-sm">
+                                            <button type="button" wire:loading.attr="disabled" wire:click="removeCartItem({{ $cartItem->id }})" class="btn btn-danger btn-sm" style="border-radius: 28px">
                                             <span wire:loading.remove wire:target="removeCartItem({{ $cartItem->id }})">
                                                 <i class="fa fa-trash"></i> Remove
                                             </span>   
                                             <span wire:loading wire:target="removeCartItem({{ $cartItem->id }})">
                                                 <i class="fa fa-trash"></i> Removing
                                             </span>     
-                                            
-                                            </a>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

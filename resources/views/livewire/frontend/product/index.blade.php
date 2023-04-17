@@ -36,9 +36,9 @@
                                 <div class="product-card">
                                     <div class="product-card-img">
                                         @if($productItem->quantity > 0)
-                                        <label class="stock bg-success">In Stock</label>
+                                        <label class="stock bg-success" style="border-radius:20px" >In Stock</label>
                                         @else
-                                        <label class="stock bg-danger">Out of Stock</label>
+                                        <label class="stock bg-danger" style="border-radius:20px" >Out of Stock</label>
                                         @endif
 
                                         @if ($productItem->productImages->count() > 0)
@@ -50,7 +50,7 @@
                                     <div class="product-card-body">
                                         <p class="product-brand">{{ $productItem->brand }}</p>
                                         <h5 class="product-name">
-                                        <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                                        <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="text-dark">
                                                 {{$productItem->name}}
                                         </a>
                                         </h5>
@@ -59,7 +59,7 @@
                                             <span class="original-price">Rs{{$productItem->original_price}}</span>
                                         </div>
                                         <div class="mt-2">
-                                            <a href="" class="btn btn1">Add To Cart</a>
+                                            <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> </a>
                                             <a href="" class="btn btn1"> <i class="fa fa-heart"></i> </a>
                                             <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="btn btn1"> View </a>
                                         </div>

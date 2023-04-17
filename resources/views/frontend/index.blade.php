@@ -19,7 +19,7 @@
                         </h1>
                         <p>{!! $sliderItem->description !!}</p>
                         <div>
-                            <a href="#" class="btn btn-slider">
+                            <a href="#"  style="border-radius:28px" class="btn btn-slider">
                                 Get Now
                             </a>
                         </div>
@@ -66,7 +66,7 @@
                     <div class="item">
                     <div class="product-card">
                         <div class="product-card-img">
-                          <label class="stock bg-primary">New</label>
+                          <label class="stock bg-primary" style="border-radius:20px">Trending</label>
                           
 
                           @if ($productItem->productImages->count() > 0)
@@ -78,7 +78,7 @@
                         <div class="product-card-body">
                           <p class="product-brand">{{ $productItem->brand }}</p>
                             <h5 class="product-name">
-                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="text-dark">
                                 {{$productItem->name}}
                               </a>
                             </h5>
@@ -108,7 +108,7 @@
         <div class="row">
           <div class="col-md-12">
             <h4>New Arrivals
-             <a href="{{ url('new-arrivals') }}" class="btn btn-warning float-end">View More</a>
+             <a href="{{ url('new-arrivals') }}" style="border-radius:28px" class="btn btn-warning float-end">View More</a>
             </h4>
             <div class="underline mb-4"></div>
           </div>
@@ -119,7 +119,7 @@
                     <div class="item">
                     <div class="product-card">
                         <div class="product-card-img">
-                          <label class="stock bg-primary">New</label>
+                          <label class="stock bg-primary" style="border-radius:20px">New</label>
                           
 
                           @if ($productItem->productImages->count() > 0)
@@ -131,7 +131,7 @@
                         <div class="product-card-body">
                           <p class="product-brand">{{ $productItem->brand }}</p>
                             <h5 class="product-name">
-                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="text-dark">
                                 {{$productItem->name}}
                               </a>
                             </h5>
@@ -161,7 +161,7 @@
         <div class="row">
           <div class="col-md-12">
             <h4>Featured Products
-              <a href="{{ url('featured-products') }}" class="btn btn-warning float-end">View More</a>
+              <a href="{{ url('featured-products') }}" style="border-radius:28px" class="btn btn-warning float-end">View More</a>
             </h4>
             <div class="underline mb-4"></div>
           </div>
@@ -172,9 +172,7 @@
                     <div class="item">
                     <div class="product-card">
                         <div class="product-card-img">
-                          <label class="stock bg-primary">New</label>
-                          
-
+                          <label class="stock bg-primary" style="border-radius:20px">Featured</label>
                           @if ($productItem->productImages->count() > 0)
                           <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
                           <img src="{{ asset($productItem->productImages[0]->image) }}" alt="{{ $productItem->name }}">
@@ -184,7 +182,7 @@
                         <div class="product-card-body">
                           <p class="product-brand">{{ $productItem->brand }}</p>
                             <h5 class="product-name">
-                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}">
+                              <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="text-dark">
                                 {{$productItem->name}}
                               </a>
                             </h5>

@@ -9,6 +9,9 @@
         <div class="row justify-content-center">
           <div class="col-md-10">
              <h4>User Profile
+
+                <a href="{{ url('change-password')}}" style="border-radius:28px" class="btn btn-warning float-end">Change Password</a>
+
              </h4>
              <div class="underline mb-4"></div>
             </div>
@@ -64,8 +67,12 @@
                                 </div>
                             </div>
                              <div class="col-md-12">
+
                              <button href="{{ url('change-password')}}" class="btn btn-warning float-end">Change Password</>
                                 <button type="submit" class="btn btn-primary">Save</button>
+
+                                <button type="submit" style="border-radius:28px" class="btn btn-dark">Save</button>
+
                             </div>
                           </div>
                           </div>

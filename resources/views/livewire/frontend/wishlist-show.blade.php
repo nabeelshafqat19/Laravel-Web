@@ -1,5 +1,5 @@
 <div>
-<div class="py-3 py-md-5 bg-light">
+<div class="py-3 py-md-5">
         <div class="container">
             <h3>My Wishlist</h3>
             <hr>
@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="col-md-4 col-12 my-auto">
                                     <div class="remove">
-                                        <button type="button" wire:click="removeWishlistItem({{ $wishlistItem->id }})" class="btn btn-danger btn-sm">
+                                        <button type="button" wire:click="removeWishlistItem({{ $wishlistItem->id }})" class="btn btn-danger btn-sm" style="border-radius: 28px">
                                             <span wire:loading.remove wire:target="removeWishlistItem({{ $wishlistItem->id }})">
                                              <i class="fa fa-trash"></i> Remove
                                             </span> 
