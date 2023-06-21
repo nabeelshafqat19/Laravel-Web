@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('brand')->nullable();
             $table->mediumText('small_description')->nullable();
             $table->longText('description')->nullable();
-
+            $table->mediumText('additional_information')->nullable();
             $table->integer('original_price');
             $table->integer('selling_price');
             $table->integer('quantity');

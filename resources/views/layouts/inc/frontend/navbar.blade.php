@@ -21,12 +21,12 @@
                             
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('cart') }}">
-                                    <i class="fa fa-shopping-cart"></i> Cart (<livewire:frontend.cart.cart-count />)
+                                    <i class="fa fa-shopping-cart"></i>(<livewire:frontend.cart.cart-count />)
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('wishlist') }}">
-                                    <i class="fa fa-heart"></i> Wishlist (<livewire:frontend.wishlist-count />)
+                                    <i class="fa fa-heart"></i>(<livewire:frontend.wishlist-count />)
                                 </a>
                             </li>
                             @guest

@@ -92,7 +92,7 @@
             </div>
 
             <div class="row">
-                <div class="col-md-8 my-md-auto mt-3">
+                <div class="col-md-8 my-md-auto mt-3" >
                     <h4>
                         Get the best deals & Offers <a href="{{ url('/collections') }}">Shop now</a>
                     </h4>

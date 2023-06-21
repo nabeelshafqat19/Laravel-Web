@@ -20,6 +20,7 @@ class Product extends Model
         'brand',
         'small_description',
         'description',
+        'additional_information',
         'original_price',
         'selling_price',
         'quantity',

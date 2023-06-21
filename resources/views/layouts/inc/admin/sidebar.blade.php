@@ -53,7 +53,7 @@
           <li class="nav-item {{ Request::is('admin/brands') ? 'active':'' }}">
             <a class="nav-link" href="{{ url('admin/brands') }}">
               <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Brands</span>
+              <span class="menu-title">Quality</span>
             </a>
           </li>
           <li class="nav-item {{ Request::is('admin/colors') ? 'active':'' }}">

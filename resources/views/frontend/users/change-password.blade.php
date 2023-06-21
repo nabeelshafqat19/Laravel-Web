@@ -42,8 +42,8 @@
                             </div>
                             <div class="mb-3 text-end">
                                 <hr>
-                                <button type="submit" class="btn btn-primary">Update Password</button>
-                                <a href="{{ url('profile')}}" class="btn btn-danger">Back</a>
+                                <button type="submit" style="border-radius:28px" class="btn btn-primary">Update Password</button>
+                                <a href="{{ url('profile')}}" style="border-radius:28px" class="btn btn-danger">Back</a>
                             </div>
                         </form>
                     </div>

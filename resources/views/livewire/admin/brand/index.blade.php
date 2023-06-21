@@ -7,8 +7,8 @@
             <div class="card"> 
                 <div class="card-header">
                     <h4>
-                        Brands List
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#addBrandModal" class="btn btn-primary btn-sm float-end">Add Brands</a>
+                        Quality List
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#addBrandModal" class="btn btn-primary btn-sm float-end">Add Quality</a>
                     </h4>
                 </div>
                 <div class="card-body">
@@ -44,7 +44,7 @@
                         </tr>
                         @empty
                         <tr>
-                            <td colspan="5">No Brands Found</td>
+                            <td colspan="5">No Quality Found</td>
                         </tr>
                         @endforelse
                       </tbody>

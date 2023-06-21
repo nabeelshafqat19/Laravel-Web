@@ -88,6 +88,10 @@
                      <label>Description</label>
                      <textarea name="description" class="form-control" rows="4"></textarea>
                     </div>
+                 <div class="mb-3">
+                     <label>Additional_information</label>
+                     <textarea name="additional_information" class="form-control" rows="4"></textarea>
+                    </div>
                  </div>
                  <div class="tab-pane fade border p-3" id="seotags-tab-pane" role="tabpanel" aria-labelledby="seotags-tab" tabindex="0">
                     <div class="mb-3">
@@ -171,21 +175,20 @@
                               Quantity: <input type="number" name="colorquantity[{{ $coloritem->id }}]" style="width:70px; border: 1px solid" />
                             </div>
                           </div>
+                          
                           @empty
                           <div class="col-md-12">
                             <h1>No colors found</h1>
                             </div>
                           @endforelse
-                          
+                          <div class="py-2 float-end">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
                         </div>
                       
                     </div>
                  </div>
-
                </div>
-              <div class="py-2 float-end">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
               </form>
             </div>
          </div>
