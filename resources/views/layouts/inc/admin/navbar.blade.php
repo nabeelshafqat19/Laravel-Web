@@ -5,7 +5,6 @@
             <!-- <img src="images/logo.svg" alt="logo"/> -->
           <h3 style="color: Black">Best Cotton</h3>
           </a> 
-          <img src="{{ URL::asset('/admin/images/Logo/logo.png')}}" alt="logo" width="40px" height="20px"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>

@@ -166,7 +166,7 @@
 }
 .product-view .btn1{
     border: 1px solid;
-    margin-right: 1px;
+    margin-right: 3px;
     border-radius: 70px;
     font-size: 14px;
     margin-top: 10px;
@@ -181,7 +181,7 @@
 }
 .product-view .input-quantity{
     border: 1px solid #000;
-    margin-right: 0px;
+    margin-right: 3px;
     font-size: 12px;
     margin-top: 10px;
     width: 58px;
