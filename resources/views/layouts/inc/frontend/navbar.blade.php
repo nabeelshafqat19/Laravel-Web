@@ -84,7 +84,14 @@
                             <a class="nav-link" href="{{ url('/') }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/collections') }}">Categories</a>
+                        <div class="dropdown">
+                        <button class="dropbtn"><a class="nav-link" href="">Categories</a></button>
+                     <div class="dropdown-content">
+                     <a href="{{ url('/collections/towels') }}">Towels</a>
+                     <a href="{{ url('/collections/thermal-blanket') }}">Thermal blanket</a>
+                     <a href="{{ url('/collections/Napkins') }}">Napkins</a>
+                    </div>
+                </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('') }}">Contact Us</a>

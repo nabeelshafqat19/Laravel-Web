@@ -73,18 +73,18 @@
           @error('category_id') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
         <div class="mb-3">
-            <label>Brand Name</label>
+            <label>Quality Name</label>
             <input type="text" wire:model.defer="name" class="form-control">
             @error('name') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
         <div class="mb-3">
-            <label>Brand Slug</label>
+            <label>Quality Slug</label>
             <input type="text" wire:model.defer="slug" class="form-control">
             @error('slug') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
         <div class="mb-3">
             <label>Status</label> <br/>
-            <input type="checkbox" wire:model.defer="status" style="width:70px;height=70px;"/> Checked=Hidden, Un-Checked=Visible
+            <input type="checkbox" wire:model.defer="status" style="width:70px;height=70px;"/>
             @error('status') <small class="text-danger">{{ $message }}</small> @enderror
         </div>
       </div>
