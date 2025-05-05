@@ -41,6 +41,11 @@ class FrontendController extends Controller
         $featuredProducts = Product::where('featured','1')->latest()->get();
         return view('frontend.pages.featured-products',compact('featuredProducts'));
     }
+    public function Towels()
+    {
+        $Towels = Product::where('Towels','1')->latest()->get();
+        return view('frontend.pages.Towels',compact('Towels'));
+    }
 
     public function categories()
     {

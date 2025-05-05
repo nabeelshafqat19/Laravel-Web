@@ -4,13 +4,14 @@
 
 @section('content')
 
+
 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
    <div class="carousel-inner">
 
        @foreach ($sliders as $key => $sliderItem)
        <div class="carousel-item {{ $key == 0 ? 'active':'' }}">
          @if($sliderItem->image)
-         <img src="{{ asset("$sliderItem->image") }}" class="d-block w-100" alt="...">
+         <img src="{{ asset($sliderItem->image) }}" class="d-block w-100" alt="...">
          @endif
           <div class="carousel-caption d-none d-md-block">
                     <div class="custom-carousel-content">
@@ -19,7 +20,7 @@
                         </h1>
                         <p>{!! $sliderItem->description !!}</p>
                         <div>
-                            <a href="#"  style="border-radius:28px" class="btn btn-slider">
+                            <a href="{{ url('/collections') }}"  style="border-radius:28px" class="btn btn-slider">
                                 Get Now
                             </a>
                         </div>
@@ -42,11 +43,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8 text-center">
-        <h4>Welcome to Best Cotton</h4>
+      <img src="{{ URL::asset('/admin/images/signup/signup (2).png')}}">
         <div class="underline mx-auto"></div>
-        <p>
+        <h4>
           We Make every type of product with pure cotton.
-        </p>
+</h4>
       </div>
     </div>
   </div>
@@ -119,7 +120,7 @@
                     <div class="item">
                     <div class="product-card">
                         <div class="product-card-img">
-                          <label class="stock bg-primary" style="border-radius:20px">New</label>
+                          <label class="stock bg-primary" style="border-radius:20px">Latest</label>
                           
 
                           @if ($productItem->productImages->count() > 0)
@@ -155,6 +156,36 @@
                     @endif
                 </div>
             </div>
+
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 700px;">
+        <img style="position: relative; width: 100%; height: 100%;" src="{{Url('admin/images/closeup/white.jpg')}}" alt="Image">
+        <div style="position: absolute; top: 270%; left:50%; transform: translate(-50%, -50%); color: black; font-size: 24px; text-align: center;">
+            <h2><img src="{{Url('/admin/images/perfection.png')}}"></h2>
+            <a href="{{ url('/collections') }}" style="background-color: Navy; color: white; border: none; padding: 10px 20px; border-radius: 0; text-decoration: none;">Go to Our Best Collections</a>
+                </div>
+            </div>
+
+            <div class="py-5">
+    <div class="container">
+        <div class="row">
+          @if($featuredProducts)
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme four-carousel">
+                @foreach ($featuredProducts as $productItem)
+                    @endforeach
+                    </div>
+                    </div>
+                    @else
+                        <div class="col-md-12">
+                            <div class="p-2">
+                              <h4>No Featured Product Available</h4>
+                            </div>
+                       </div>
+                    </div>
+                    @endif
+                </div>
+            </div>
+            
 
             <div class="py-5">
     <div class="container">
@@ -206,13 +237,8 @@
                     @endif
                 </div>
             </div>
-
-
-@endsection
-
-
-@section('script')
-
+    @endsection
+    @section('script')
 <script>
   $('.four-carousel').owlCarousel({
     loop:true,

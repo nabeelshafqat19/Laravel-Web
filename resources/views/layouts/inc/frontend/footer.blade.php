@@ -1,3 +1,16 @@
+<br><br><br>
+            <center><div style="display: flex; align-items: center; justify-content: center; width: 1000px; height: 200px; border: 1px solid white; padding: 20px;margin:40px;">        
+            <div style="flex: 1; padding: 50px;">
+            <img src="{{Url('/admin/images/aboutus/aboutus-main.jpg')}}" alt="Image" width=100%;>
+        </div>
+        <div style="flex: 2; padding: 10px;">
+            <h2>About Us</h2>
+            <p>"To be the one stop shop only; by selling, executing and enhancing consumer satisfaction globally with constant improvement and innovation while positively contributing to our society."</p>
+            <a href="{{ url('/about-us') }}" class="text-black"><button style="background-color: Navy; color: white; border: none; padding: 10px 20px; border-radius: 0;">More About Us</button></a>
+
+        </div>
+    </div></center>
+    <br><br><br>    
 <div>
     <div class="footer">
         <div class="banner-with-contents">
@@ -52,8 +65,9 @@
                     <h4 class="footer-heading">Best Cotton</h4>
                     <div class="footer-underline"></div>
                     <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                    Welcome to our website! We are a leading provider of high-quality cotton towels and other cotton products. Our products are made from the finest cotton available to ensure maximum comfort and durability. We offer a wide range of products, including bath towels, beach towels, hand towels, washcloths, and more. Our towels come in a variety of colors and sizes to suit your needs. 
+ 
+ At our website, we are committed to providing our customers with the best possible shopping experience. 
                     </p>
                 </div>
                 <div class="col-md-3">
@@ -62,7 +76,6 @@
                     <div class="mb-2"><a href="{{ url('/') }}" class="text-black">Home</a></div>
                     <div class="mb-2"><a href="{{ url('/about-us') }}" class="text-black">About Us</a></div>
                     <div class="mb-2"><a href="{{ url('/contact-us') }}" class="text-black">Contact Us</a></div>
-                    <div class="mb-2"><a href="{{ url('/blogs') }}" class="text-black">Blogs</a></div>
                     <!-- <div class="mb-2"><a href="" class="text-black">Sitemaps</a></div> -->
                 </div>
                 <div class="col-md-3">
@@ -72,7 +85,6 @@
                     <div class="mb-2"><a href="{{ url('/') }}" class="text-black">Trending Products</a></div>
                     <div class="mb-2"><a href="{{ url('/new-arrivals') }}" class="text-black">New Arrivals Products</a></div>
                     <div class="mb-2"><a href="{{ url('/featured-products') }}" class="text-black">Featured Products</a></div>
-                    <div class="mb-2"><a href="{{ url('/cart') }}" class="text-black">Cart</a></div>
                 </div>
                 <div class="col-md-3">
                     <h4 class="footer-heading">Reach Us</h4>
@@ -103,7 +115,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <p class=""> &copy; 2023 - Best Cotton. All rights reserved.</p>
+                    <p class=""> &copy; 2025 - Best Cotton. All rights reserved.</p>
                 </div>
                 <div class="col-md-4">
                     <div class="social-media">

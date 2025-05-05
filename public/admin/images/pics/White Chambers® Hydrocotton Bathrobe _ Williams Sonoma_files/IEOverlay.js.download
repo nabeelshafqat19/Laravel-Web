@@ -1,0 +1,121 @@
+/**
+ * IEOverlay Experience
+ * This script will display an overlay with links to download modern alternatives
+ * to the Internet Explorer browser as we discontinue support in MFE apps.
+ *
+ * IE does not fully support ES6 syntax, and some older versions of IE do
+ * not support ES6 at all. The script is intentionally written using ES5
+ * syntax to ensure compatibility with older versions of IE.
+ */
+window.onload = function () {
+  init();
+};
+
+/**
+ * Initializes the IEOverlay.
+ * If the browser is Internet Explorer, and this is the first page of the session
+ * then the overlay will be rendered on the page.
+ *
+ * @returns {undefined}
+ */
+function init() {
+  if (isIE() && isFirstPageOfSession()) {
+    window.sessionStorage.setItem("ieOverlay", true);
+    injectTemplate();
+    setupEventListeners();
+  }
+}
+
+/**
+ * Creates and injects the IEOverlay html element into the DOM.
+ *
+ * @returns {undefined}
+ */
+function injectTemplate() {
+  var ieOverlayTemplate =
+    '<div id="IEOverlay" class="shader"  data-component="Global-Modal">\
+      <div class="modal-scroll">\
+        <dialog class="modal_component" open="open">\
+          <button\
+            type="button"\
+            class="btnClose"\
+            aria-label="close-global-modal"\
+          >\
+            x\
+          </button>\
+          <section class="modalBody">\
+            <div class="ie11-overlay">\
+              <h1>We\'re sorry. We no longer support Internet Explorer.</h1>\
+              <p>Try one of these options to have a better experience on our site.</p>\
+              <ul class="browser-links">\
+                  <li>\
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.mozilla.org/en-US/firefox/new/">\
+                          <img src="https://www.westelm.com/netstorage/images/ossa/Firefox.png" />\
+                          <span>Firefox</span>\
+                      </a>\
+                  </li>\
+                  <li>\
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.google.com/chrome/">\
+                          <img src="https://www.westelm.com/netstorage/images/ossa/Chrome.png" />\
+                          <span>Google Chrome</span>\
+                      </a>\
+                  </li>\
+                  <li>\
+                      <a target="_blank" rel="noopener noreferrer" href="https://www.microsoft.com/en-us/edge">\
+                          <img src="https://www.westelm.com/netstorage/images/ossa/MicrosoftEdge.png" />\
+                          <span>Microsoft Edge</span>\
+                      </a>\
+                  </li>\
+              </ul>\
+              <div class="btn btn-primary">continue shopping</div>\
+          </div>\
+          </section>\
+        </dialog>\
+      </div>\
+    </div>';
+  var ieOverlay = document.createElement("div");
+  ieOverlay.innerHTML = ieOverlayTemplate;
+  document.body.appendChild(ieOverlay);
+}
+
+/**
+ * Checks session storage to know if this is the first page of the session.
+ *
+ * @returns {boolean} true if this is the first page of the session, otherwise false.
+ */
+function isFirstPageOfSession() {
+  return window.sessionStorage.getItem("ieOverlay") !== "true";
+}
+
+/**
+ * Checks if browser is Internet Explorer.
+ *
+ * @returns {boolean} true if browser is Internet Explorer, otherwise false.
+ */
+function isIE() {
+  var regEx = new RegExp(/Trident|MSIE/);
+  return regEx.test(window.navigator.userAgent);
+}
+
+/**
+ * Creates event listener for selectors that will close the overlay on click.
+ * Clicking either the close 'x', 'continue shopping' button, or anywhere outside
+ * of the overlay will close it.
+ *
+ * @returns {undefined}
+ */
+function setupEventListeners() {
+  document.addEventListener(
+    "click",
+    function (event) {
+      if (
+        event.target.msMatchesSelector("#IEOverlay .btnClose") ||
+        event.target.msMatchesSelector(".ie11-overlay .btn-primary") ||
+        event.target.id === "IEOverlay"
+      ) {
+        document.getElementById("IEOverlay").style.display = "none";
+      }
+    },
+    false
+  );
+}

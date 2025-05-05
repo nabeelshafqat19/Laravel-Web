@@ -1,0 +1,132 @@
+/*
+OnlineOpinion v5.9.3
+Released: 09/21/2015. Compiled 09/30/2015 12:09:31 PM -0500
+Branch: 5.9.3 efe6bf2541deb563c2a9884b2a3034c881047acf
+Components: Full
+UMD: disabled
+The following code is Copyright 1998-2015 Opinionlab, Inc. All rights reserved. Unauthorized use is prohibited. This product and other products of OpinionLab, Inc. are protected by U.S. Patent No. 6606581, 6421724, 6785717 B1 and other patents pending. http://www.opinionlab.com
+*/
+
+/* global window, OOo */
+
+/*
+Inline configuration
+*********************
+Object is now being instantiated against the OOo object (1 global class)
+To call this object, place the calls below into the click event for their corresponding HTML element
+OOo.oo_launch(event, 'oo_inline_menu');
+OOo.oo_launch(event, 'oo_inline_footer');
+*/
+(function (w, o) {
+  "use strict";
+
+  var OpinionLabInit = function (brand) {
+    OOo.getParameterByName = function (name, url) {
+      if (!url) {
+        url = window.location.href;
+      }
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+      if (!results) {
+        return null;
+      }
+      if (!results[2]) {
+        return "";
+      }
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    };
+
+    var replacePatternDomain = "pbteen.com/mobile";
+    var forceLaunchMobile = false;
+    switch (brand) {
+      case "Pottery Barn":
+        replacePatternDomain = "potterybarn.com/mobile";
+        break;
+      case "west elm":
+        replacePatternDomain = "westelm.com/m";
+        forceLaunchMobile = true;
+        break;
+      case "Williams Sonoma":
+        replacePatternDomain = "williams-sonoma.com/m";
+        forceLaunchMobile = true;
+        break;
+      case "Pottery Barn Kids":
+        replacePatternDomain = "potterybarnkids.com/m";
+        break;
+    }
+
+    if (forceLaunchMobile) {
+      var ooFooterLink = document.getElementById("opinion-lab-footer-link");
+      if (ooFooterLink) {
+        ooFooterLink.addEventListener("click", function (event) {
+          OOo.oo_launch(event, "oo_delivery_tracker_inline_footer");
+        });
+      }
+    }
+
+    /**
+     * Determine if website or within app by checking if the query parameter: apptype=reg exists
+     */
+    var appType = OOo.getParameterByName("apptype", location.href);
+
+    var orderNumber = OOo.getParameterByName("orderNumber", location.href);
+
+    var orderZip = OOo.getParameterByName("postalCode", location.href);
+
+    /**
+     * Determine if website or within app by checking if the user agent or query parameter "apptype" on the URL
+     */
+    OOo.checkRegistryApp = function () {
+      return !!~navigator.userAgent.indexOf("RegistryApp") || appType === "reg";
+    };
+
+    var isRegistryApp = OOo.checkRegistryApp();
+
+    var getReferrerRewrite = function (trigger) {
+      return (
+        location.protocol +
+        "//" +
+        (isRegistryApp
+          ? location.hostname.replace("www", "app")
+          : location.hostname) +
+        location.pathname +
+        "?trigger=" +
+        trigger
+      );
+    };
+
+    o.oo_inline_menu = new o.Ocode({
+      referrerRewrite: {
+        replacePattern: getReferrerRewrite("menu"),
+      },
+    });
+
+    o.oo_inline_footer = new o.Ocode({
+      referrerRewrite: {
+        replacePattern: getReferrerRewrite("footer"),
+      },
+    });
+
+    o.oo_delivery_tracker_inline_footer = new o.Ocode({
+      referrerRewrite: {
+        searchPattern: /:\/\/[^\/]*/,
+        replacePattern: "://trackorder." + replacePatternDomain,
+      },
+      customVariables: {
+        OrderNumber: typeof orderNumber !== "undefined" ? orderNumber : "",
+        OrderZIP: typeof orderZip !== "undefined" ? orderZip : "",
+      },
+    });
+  };
+
+  o.oo_launch = function (e, feedback, brand) {
+    OpinionLabInit(brand);
+    var evt = e || window.event;
+    o[feedback].show(evt);
+  };
+
+  o.oo_launchOOPopup = function (feedback) {
+    o[feedback].launchOOPopup();
+  };
+})(window, OOo);

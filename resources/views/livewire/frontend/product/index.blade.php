@@ -59,8 +59,6 @@
                                             <span class="original-price">Rs{{$productItem->original_price}}</span>
                                         </div>
                                         <div class="mt-2">
-                                            <a href="" class="btn btn1"> <i class="fa fa-shopping-cart"></i> </a>
-                                            <a href="" class="btn btn1"> <i class="fa fa-heart"></i> </a>
                                             <a href="{{ url('/collections/'.$productItem->category->slug.'/'.$productItem->slug) }}" class="btn btn1"> View </a>
                                         </div>
                                     </div>

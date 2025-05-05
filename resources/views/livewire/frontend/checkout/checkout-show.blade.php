@@ -1,9 +1,7 @@
-<div>
-<div class="py-3 py-md-4 checkout">
-        <div class="container">
-            <h4>Checkout</h4>
-            <hr>
 
+<div>
+    <div class="py-3 py-md-4 checkout">
+        <div class="container">
             @if($this->totalProductAmount != '0')
             <div class="row">
                 <div class="col-md-12 mb-4">
@@ -13,19 +11,23 @@
                             <span class="float-end">Rs{{$this->totalProductAmount}}</span>
                         </h4>
                         <hr>
-                        <small>* Items will be delivered in 3 - 5 days.</small>
+                        <small>Delivery in 3 - 5 days.</small>
                         <br/>
-                        <small>* Tax and other charges are included ?</small>
-                    </div>
+                     </div>
+                     <div class="shadow bg-white p-3">
+                        <h4 class="text-dark">
+                        <hr>
+                        <small>*Before Making Order Please complete your profile.</small>
+                        <br/>
+                     </div>
                 </div>
                 <div class="col-md-12">
                     <div class="shadow bg-white p-3">
                         <h4 class="text-dark">
-                            Basic Information
+                            Checkout Form
                         </h4>
                         <hr>
-
-                            <div class="row">
+                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label>Full Name</label>
                                     <input type="text" wire:model.defer="fullname" class="form-control" placeholder="Enter Full Name" />
@@ -70,30 +72,25 @@
                                                       Placing Order 
                                                     </span>  
                                                 </button>
-
-                                            </div>
+                                             </div>
                                             <div class="tab-pane fade" id="onlinePayment" role="tabpanel" aria-labelledby="onlinePayment-tab" tabindex="0">
                                                 <h6>Online Payment Mode</h6>
                                                 <hr/>
-                                                <button type="button" style="border-radius:28px"  wire:loading.attr="disabled" class="btn btn-warning">Pay Now (Online Payment)</button>
+                                            <a href="example.blade.php"><button type="button" style="border-radius:28px"  wire:loading.attr="disabled" class="btn btn-warning">Pay Now (Online Payment)</button></a>
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
+                                 </div>
                             </div>
-
-                    </div>
+                     </div>
                 </div>
-
-            </div>
+             </div>
             @else
              <div class="card card-body shadow text-center p-md-5">
                 <h4>No items in cart to checkout</h4>
                 <a href="{{ url('collections') }}" class="btn btn-warning">Shop Now</a>
              </div>
             @endif
-
-        </div>
+         </div>
     </div>
 </div>

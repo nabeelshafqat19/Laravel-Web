@@ -1,0 +1,40 @@
+/**
+ * Method to get the wsid_svi3 cookie from document.cookie
+ * @param {String}  cookie name to find it's value 
+ * @returns {String || null} in the form of wsid_svi3
+ */
+async function getCustomerIDForVisitor(cookieKey) {
+  let wsid_svi3 = getCookieValue(cookieKey);
+  if (!wsid_svi3) {
+    wsid_svi3 = await getSVI2cookie(cookieKey);
+  }
+  return wsid_svi3 || null;
+};
+
+/**
+ * Method to set the SVI3 cookie from SVI2 cookie
+ * @param {String}  cookie name to find it's value 
+ * @returns {String || null} in the form of wsid_svi3
+ */
+async function getSVI2cookie(cookieKey) {
+  const mcvID = visitor.getMarketingCloudVisitorID(),
+    urlPath = `/api/visitor/v1/storage?`,
+    qParam = mcvID ? `svi3=${mcvID}` : `svi3`;
+  let response;
+  try {
+    response = await fetch(urlPath + qParam, {
+      method: "POST",
+      headers:
+      {
+        "Content-Type": "application/json",
+      },
+      body: '{"action":"update"}',
+    });
+  } catch (err) {
+    return visitor.getMarketingCloudVisitorID();
+  }
+  if (!response.ok) {
+    return visitor.getMarketingCloudVisitorID();
+  }
+  return getCookieValue(cookieKey) || visitor.getMarketingCloudVisitorID();
+};

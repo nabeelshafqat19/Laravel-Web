@@ -12,9 +12,9 @@
                     <h5 class="alert alert-success">{{ session('message') }}</h5>
                 @endif
                 <div class="p-4 shadow bg-white">
-                    <h2>You Logo</h2>
+                    <img src="{{ url('admin/images/thankyou/thankyou (2).png') }}">
                     <h4>Thank You for Shopping with Best Cotton</h4>
-                    <a href="{{ url('collections') }}" class="btn btn-primary">Shop Now</a>
+                    <a href="{{ url('collections') }}" class="btn btn-warning">Shop Now</a>
                 </div>
             </div>
         </div>

@@ -571,3 +571,7 @@ footer .value-propositions .value-proposition-item .proposition-icon-holder {
         margin: auto;
     }
 }
+
+p{
+    text-align: justify;
+}

@@ -1,0 +1,130 @@
+/*
+ *  Determine the page type, in alignment with historical regional mboxes
+ *  returns {String} -- One of the following:
+ *    home
+ *    shop
+ *    product
+ *    search
+ *    shoppingcart
+ *    checkout
+ *    orderconfirm
+ *    other
+ */
+var getPageType = function() {
+
+    if ( window.location.pathname === '/' ||
+         window.location.pathname === '/m/' ) {
+        return 'home';
+    }
+
+    if ( window.location.pathname.match(/\/shop\//) ) {
+        return 'shop';
+    }
+
+    if ( window.location.pathname.match(/\/products\//) ) {
+        return 'product';
+    }
+
+    if ( window.location.pathname.match(/\/search\/results\.html/) ) {
+        return 'search';
+    }
+
+    if ( window.location.pathname.match(/\/shoppingcart\//) ) {
+        return 'shoppingcart';
+    }
+
+    if ( window.location.pathname.match(/\/checkout\/thanks.html/) ) {
+        return 'orderconfirm';
+    }
+
+    if ( window.location.pathname.match(/\/checkout\//) ) {
+        return 'checkout';
+    }
+
+    return 'other';
+};
+
+/*
+ *  For a shop page, determine the supercat and category.
+ * 
+ *  @return {Object} If not on a shop page, returns undefined; 
+ *    If on a shop page,
+ *    Returns an object whose keys are 'supercat' and 'category'
+ *    and whose values come from the URL;  On a supercat page, the category
+ *    duplicates the supercat, and on category pages, the category matches
+ *    analytics evar43 format "supercat:category-id"
+ */
+var getCategoryIds = function() {
+    var regExp = new RegExp('\/shop\/([^/]+)\/?([^/]*)');
+    var found = window.location.pathname.match(regExp);
+    var supercat;
+    var category;
+    if ( found && found.length > 1 ) {
+        supercat = found[1];
+        category = ( found.length > 2 && supercat && found[2] ) ?
+            supercat + ":" + found[2] : supercat;
+        return {   
+            supercat: supercat,
+            category: category
+        };
+    }
+    return undefined;
+};
+ 
+/*
+ *  Provide a value that identifies the site according to Adobe Target.
+ *
+ *  @return {String} Either a useful value, or the string 'default' 
+ *    if no useful value could be determined. 
+ */
+var getSiteProperty = function() { 
+    var property = 'default';
+    var names = window.location.hostname.split('.');
+    if ( names.length >= 2 ) { 
+        var concept = names[names.length-2];
+        var properties = { 
+            'markandgraham':   'b3a9fa86-cb93-6d65-9612-10950cd0952a',
+            'potterybarn':     '12f46114-b9fc-4734-c5f2-6ae5d261df88',
+            'potterybarnkids': '9300cc68-61c8-0661-aaf0-52c52ccd4717',
+            'potterybarnteen': '11545c54-11a7-cc7e-1b97-bbcbc6c26f5f',
+            'westelm':         'f50207f7-efe8-9479-bb19-73f56488df0f', 
+            'williams-sonoma': '11f33e43-5347-51b8-48df-16f66f3a43d5'
+        };
+        properties['pbteen'] = properties['potterybarnteen'];
+        if ( properties[concept] ) {
+            property = properties[concept];
+        }
+    }
+    return property;
+};
+
+/*
+ *  Provide the desired parameters and values to Adobe Target
+ */
+var targetPageParams = function() {
+    
+    var params = {
+        'pageType': getPageType(),
+        'at_property': getSiteProperty()
+    };
+ 
+    var categoryIds = getCategoryIds();
+    if ( categoryIds ) {
+ 
+        /*
+         *  The Target profile parameter profile.categoryId is a special param
+         *  used for an algorithm that takes into account recency & frequency.
+         *  For historical reasons, we use the supercat value.
+         */
+        if ( categoryIds.supercat ) {
+            params['profile.categoryId'] = categoryIds.supercat;
+        }
+ 
+        if ( categoryIds.category ) {
+            params['profile.categoryDetail'] = categoryIds.category;
+        }
+    }
+ 
+    return params;
+};
+

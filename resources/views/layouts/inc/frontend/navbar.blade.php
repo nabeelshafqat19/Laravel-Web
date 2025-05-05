@@ -85,16 +85,18 @@
                         </li>
                         <li class="nav-item">
                         <div class="dropdown">
-                        <button class="dropbtn"><a class="nav-link" href="">Categories</a></button>
+                        <button class="dropbtn"><a class="nav-link" href="{{ url('/collections') }}">Categories</a></button>
                      <div class="dropdown-content">
-                     <a href="{{ url('/collections/towels') }}">Towels</a>
-                     <a href="{{ url('/collections/thermal-blanket') }}">Thermal blanket</a>
-                     <a href="{{ url('/collections/Napkins') }}">Napkins</a>
+                     <a href="{{ url('/collections/prayer-rug') }}">Prayer Rug</a>
+                     <a href="{{ url('/collections/kitchen-towels') }}">Kitchen Towels</a>
+                     <a href="{{ url('/collections/thermal-blankets') }}">Thermal blanket</a>
+                     <a href="{{ url('/collections/ihram-set') }}">Ihram Set</a>
+                     <a href="{{ url('/collections') }}">..More</a>
                     </div>
                 </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('') }}">Contact Us</a>
+                            <a class="nav-link" href="{{ url('contact-us') }}">Contact Us</a>
                         </li>
                     </ul>
                 </div>
